@@ -1,3 +1,9 @@
+/**
+ * TypeScript 설정 파일입니다.
+ * 파일 import시 디폴트 경로는 root 경로인 @/ 입니다.
+ * @author 도형
+ */
+
 {
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext"],
@@ -18,7 +24,7 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

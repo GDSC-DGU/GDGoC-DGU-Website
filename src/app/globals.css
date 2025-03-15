@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/**
+ * 전역 스타일 정의 파일로, Tailwind CSS 설정과 라이트/다크 모드 테마 변수를 포함합니다.
+ * @author 도형
+ */
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
