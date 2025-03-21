@@ -1,5 +1,7 @@
 import React from "react";
 
+import clsx from "clsx";
+
 import { HighlightText } from "./Highlight.component";
 
 /**
@@ -17,7 +19,13 @@ export const PartTag = ({ text, color }: PartTagProps) => {
   return (
     <div className='flex flex-wrap'>
       <HighlightText
-        className={` text-xs md:text-xs lg:text-xs font-bold text-${color} rounded-md px-3 py-1 bg-white border-${color} border-2`}
+        className={clsx("text-xs font-semibold rounded-md px-3 py-1 bg-white border-2", {
+          "text-red border-red": color === "red",
+          "text-blue border-blue": color === "blue",
+          "text-green border-green": color === "green",
+          "text-yellow border-yellow": color === "yellow",
+          "text-black border-black": color === "black",
+        })}
       >
         {text}
       </HighlightText>

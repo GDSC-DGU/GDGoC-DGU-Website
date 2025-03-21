@@ -64,9 +64,9 @@ export const Filter = ({ name, value = "", onChange, optionList }: FilterProps) 
   const displayValue = isAll ? name : selectedValue; // "전체"일 땐 기본 표시
 
   return (
-    <div className='relative inline-block w-40' ref={dropdownRef}>
+    <div className={`relative inline-block w-32 tablet:w-40`} ref={dropdownRef}>
       <div
-        className={`w-full border-2 rounded-lg px-4 py-2 text-xl cursor-pointer flex justify-between items-center ${getColorClass(selectedValue)} bg-white`}
+        className={`w-full border-2 rounded-lg cursor-pointer flex justify-between items-center ${getColorClass(selectedValue)} bg-white px-3 py-1 text-base tablet:px-4 tablet:py-2 tablet:text-xl`}
         onClick={() => setIsOpen((prev) => !prev)}
       >
         <span>{displayValue}</span>
@@ -78,7 +78,7 @@ export const Filter = ({ name, value = "", onChange, optionList }: FilterProps) 
           {[...optionList].map((opt) => (
             <li
               key={opt}
-              className={`px-4 py-2 m-1 rounded-md text-lg hover:bg-gray-100 cursor-pointer text-gray-400  ${
+              className={`px-3 py-1 text-base tablet:px-4 tablet:py-2 tablet:text-xl m-1 rounded-md hover:bg-gray-100 cursor-pointer text-gray-400  ${
                 selectedValue === opt ? "bg-gray-100" : ""
               }`}
               onClick={() => handleSelect(opt)}

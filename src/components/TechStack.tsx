@@ -1,19 +1,8 @@
 import React from "react";
 
-import { HighlightText } from "./Highlight.component";
+import clsx from "clsx";
 
-// const FrontendStack = [
-//   "JavaScript",
-//   "TypeScript",
-//   "React",
-//   "Next.js",
-//   "React-Native",
-//   "Dart",
-//   "Flutter",
-//   "SwiftUI",
-//   "Swift",
-// ];
-// const InfrastructureStack = ["AWS - Solutions Architect Associate, AWS Certified Developer", "Docker", "Vercel"];
+import { HighlightText } from "./Highlight.component";
 
 /**
  * 코드블럭 형태의 기술 스택 컴포넌트입니다.
@@ -32,7 +21,14 @@ interface TechStackProps {
 export const TechStack = ({ text, color }: TechStackProps) => {
   return (
     <div className='flex flex-wrap'>
-      <HighlightText className={` text-sm md:text-sm lg:text-sm font-normal text-${color} bg-${color}-50 rounded-md`}>
+      <HighlightText
+        className={clsx("text-sm md:text-sm lg:text-sm font-normal rounded-md`", {
+          "text-red bg-red-50 ": color === "red",
+          "text-blue bg-blue-50": color === "blue",
+          "text-green bg-green-50": color === "green",
+          "text-yellow bg-yellow-50": color === "yellow",
+        })}
+      >
         #{text}
       </HighlightText>
     </div>
