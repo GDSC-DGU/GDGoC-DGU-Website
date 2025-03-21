@@ -16,3 +16,5 @@ export * from "./Prose";
 export * from "./TechCard.component";
 export * from "./TechStack";
 export * from "./Typography.component";
+export * from "./PartTag";
+export * from "./Filter.component";

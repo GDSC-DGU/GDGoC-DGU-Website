@@ -1,6 +1,17 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
+
+import { Filter, PartTag, TechStack } from "@/src/components";
+
+const List = ["AI/ML", "Server/Cloud", "Web/App"];
 
 export default function TechblogPage() {
+  const [value, setValue] = useState("AI/ML");
+  const handleFilterChange = (value: string) => {
+    setValue(value);
+  };
   return (
     <div className='min-h-screen flex flex-col bg-black text-white'>
       {/* 헤더 */}
@@ -50,7 +61,7 @@ export default function TechblogPage() {
       </header>
 
       {/* 메인 컨텐츠 */}
-      <main className='flex flex-col items-center justify-center flex-1 text-center px-8 py-20'>
+      {/* <main className='flex flex-col items-center justify-center flex-1 text-center px-8 py-20'>
         <h1 className='text-4xl font-bold mb-4'>막간의 여행, GDGoC</h1>
         <p className='text-gray-400 max-w-lg'>
           개발자와 함께하는 다양한 프로젝트, 세미나, 그리고 네트워킹의 장. 지금 GDGoC와 함께하세요!
@@ -61,8 +72,17 @@ export default function TechblogPage() {
         >
           지금 참여하기 →
         </a>
-      </main>
-
+      </main> */}
+      <div className='flex-column'>
+        <TechStack color='red' text='javascript' />
+        <TechStack color='blue' text='React' />
+        <PartTag color='red' text='AI/ML' />
+        <PartTag color='green' text='Web/App' />
+        <PartTag color='blue' text='Server/Cloud' />
+        <PartTag color='yellow' text='Devral' />
+        <PartTag color='black' text='Lead' />
+      </div>
+      <Filter name='기수' value={value} onChange={handleFilterChange} optionList={List} />
       {/* 푸터 */}
       <footer className='py-6 text-center text-gray-500 text-sm border-t border-gray-800'>
         © 2025 GDGoC. All rights reserved.
