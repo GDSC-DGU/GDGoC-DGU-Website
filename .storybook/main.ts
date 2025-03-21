@@ -1,3 +1,7 @@
+/**
+ * 스토리북 메인 설정 파일입니다.
+ * @author 태욱
+ */
 import type { StorybookConfig } from "@storybook/experimental-nextjs-vite";
 
 const config: StorybookConfig = {
