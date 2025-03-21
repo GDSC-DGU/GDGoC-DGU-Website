@@ -19,7 +19,7 @@ export const Pagination = ({ totalPages }: PaginationProps) => {
   };
 
   return (
-    <div className='flex items-center'>
+    <div className='flex items-center justify-center space-x-2'>
       {/*왼쪽 화살표*/}
       <button
         className={`p-2 rounded-md ${currentPage === 1 ? "hidden" : "text-gray-400"}`}
