@@ -18,3 +18,4 @@ export * from "./TechStack";
 export * from "./Typography.component";
 export * from "./PartTag";
 export * from "./Filter.component";
+export * from "./StudyInfo.component";
