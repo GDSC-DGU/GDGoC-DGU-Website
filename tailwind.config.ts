@@ -122,10 +122,10 @@ const config: Config = {
       },
     },
     screens: {
-      tablet: "640px",
-      // => @media (min-width: 640px) { ... }
-      desktop: "1024px",
-      // => @media (min-width: 1024px) { ... }
+      tablet: "768px",
+      // => @media (min-width: 768px) { ... }
+      desktop: "1440px",
+      // => @media (min-width: 1440px) { ... }
     },
   },
   plugins: [require("@tailwindcss/typography"), addVariablesForColors],

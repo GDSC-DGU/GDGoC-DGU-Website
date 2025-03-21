@@ -1,7 +1,5 @@
 import Image from "next/image";
 
-const List = ["AI/ML", "Server/Cloud", "Web/App"];
-
 export default function TechblogPage() {
   return (
     <div className='min-h-screen flex flex-col bg-black text-white'>
