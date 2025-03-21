@@ -20,6 +20,7 @@ export const Pagination = ({ totalPages }: PaginationProps) => {
 
   return (
     <div className='flex items-center'>
+      {/*왼쪽 화살표*/}
       <button
         className={`p-2 rounded-md ${currentPage === 1 ? "hidden" : "text-gray-400"}`}
         onClick={() => handleChange(currentPage - 1)}
@@ -27,7 +28,6 @@ export const Pagination = ({ totalPages }: PaginationProps) => {
         <img src='/images/svg/next.svg' alt='next' className='rotate-180 w-4 h-4' />
       </button>
 
-      {/* 페이지 번호 */}
       {[...Array(totalPages)].map((_, index) => {
         const pageNumber = index + 1;
         return (
@@ -43,7 +43,7 @@ export const Pagination = ({ totalPages }: PaginationProps) => {
         );
       })}
 
-      {/* 다음 페이지 (비활성화 X) */}
+      {/*오른쪽 화살표*/}
       <button
         className={`p-2 rounded-md ${currentPage === totalPages ? "hidden" : "text-gray-400"}`}
         onClick={() => handleChange(currentPage + 1)}
