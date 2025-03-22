@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 import clsx from "clsx";
@@ -9,22 +10,28 @@ import clsx from "clsx";
  */
 
 interface StudyInfoProps {
-  part: "AM" | "SC" | "WA";
+  part: "AI/ML" | "Server/Cloud" | "Web/App";
   content: string;
 }
 
 export const StudyInfo = ({ part, content }: StudyInfoProps) => {
-  const iconPath = `/images/svg/${part}.svg`;
+  const partToFileName: Record<string, string> = {
+    "AI/ML": "AM",
+    "Server/Cloud": "SC",
+    "Web/App": "WA",
+  };
+
+  const iconPath = `/images/svg/${partToFileName[part]}.svg`;
 
   return (
     <div
       className={clsx("flex items-center gap-3 px-6 py-4 rounded-xl", {
-        "bg-red-50": part === "AM",
-        "bg-blue-50": part === "SC",
-        "bg-green-50": part === "WA",
+        "bg-red-50": part === "AI/ML",
+        "bg-blue-50": part === "Server/Cloud",
+        "bg-green-50": part === "Web/App",
       })}
     >
-      <img src={iconPath} alt={part} width={30} height={30} />
+      <Image src={iconPath} alt={part} width={30} height={30} />
       <p className='text-sm tablet:text-xl text-black'>{content}</p>
     </div>
   );

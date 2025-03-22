@@ -19,8 +19,20 @@ export default meta;
 
 type Story = StoryObj<typeof Pagination>;
 
-export const DefaultPagination: Story = {
+export const FivePagination: Story = {
   args: {
     totalPages: 5,
+  },
+};
+
+export const SevenPagination: Story = {
+  args: {
+    totalPages: 7,
+  },
+};
+
+export const TenPagination: Story = {
+  args: {
+    totalPages: 10,
   },
 };

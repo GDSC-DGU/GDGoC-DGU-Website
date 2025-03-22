@@ -12,8 +12,7 @@ const meta: Meta<typeof PartTag> = {
   title: "Components/Common/PartTag",
   component: PartTag,
   argTypes: {
-    text: { control: "text" },
-    color: { control: "text" },
+    part: { control: "text" },
   },
 };
 
@@ -24,39 +23,34 @@ type Story = StoryObj<typeof PartTag>;
 // AI/ML 파트 스토리 생성
 export const AIML: Story = {
   args: {
-    text: "AI/ML",
-    color: "red",
+    part: "AI/ML",
   },
 };
 
 // Server/Cloud 파트 스토리 생성
 export const ServerCloud: Story = {
   args: {
-    text: "Server/Cloud",
-    color: "blue",
+    part: "Server/Cloud",
   },
 };
 
 // Web/App 파트 스토리 생성
 export const WebApp: Story = {
   args: {
-    text: "Web/App",
-    color: "green",
+    part: "Web/App",
   },
 };
 
 // Devral 파트 스토리 생성
 export const Devral: Story = {
   args: {
-    text: "Devral",
-    color: "yellow",
+    part: "Devral",
   },
 };
 
 // Lead 파트 스토리 생성
 export const Lead: Story = {
   args: {
-    text: "Lead",
-    color: "black",
+    part: "Lead",
   },
 };

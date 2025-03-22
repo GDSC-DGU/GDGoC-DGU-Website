@@ -9,16 +9,45 @@ import React, { useEffect, useRef, useState } from "react";
  */
 
 interface FilterProps {
-  name: string;
+  // 필터 카테고리를 기수, 파트, 타입으로 한정합니다.
+  category: "generation" | "part" | "type";
   value?: string;
   onChange: (value: string) => void;
-  optionList: string[];
 }
 
-export const Filter = ({ name, value = "", onChange, optionList }: FilterProps) => {
+interface FilterType {
+  name: string;
+  options: string[];
+}
+
+export const Filter = ({ category, value = "", onChange }: FilterProps) => {
   const [selectedValue, setSelectedValue] = useState(value || "전체");
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const getFilterConfig = (category: string): FilterType => {
+    switch (category) {
+      case "generation":
+        return {
+          name: "기수",
+          options: ["전체", "1기", "2기"],
+        };
+      case "part":
+        return {
+          name: "파트",
+          options: ["전체", "AI/ML", "Server/Cloud", "Web/App", "Devral", "Lead"],
+        };
+
+      case "type":
+        return {
+          name: "타입",
+          options: ["전체", "오픈 세미나", "연합 세미나", "캠핑 세미나"],
+        };
+      default:
+        return { name: "필터", options: ["전체"] }; // 예외 처리
+    }
+  };
+  const { name, options } = getFilterConfig(category);
 
   useEffect(() => {
     setSelectedValue(value || "전체");
@@ -75,7 +104,7 @@ export const Filter = ({ name, value = "", onChange, optionList }: FilterProps) 
 
       {isOpen && (
         <ul className='absolute z-10 mt-1 w-full bg-white border border-gray-200 rounded-lg shadow-md max-h-60 overflow-auto'>
-          {[...optionList].map((opt) => (
+          {[...options].map((opt) => (
             <li
               key={opt}
               className={`px-3 py-1 text-base tablet:px-4 tablet:py-2 tablet:text-xl m-1 rounded-md hover:bg-gray-100 cursor-pointer text-gray-400  ${

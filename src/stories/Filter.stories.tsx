@@ -14,9 +14,11 @@ const meta: Meta<typeof Filter> = {
   title: "Components/Common/Filter",
   component: Filter,
   argTypes: {
-    name: { control: "text" },
+    category: {
+      control: { type: "select" },
+      options: ["part", "generation", "type"],
+    },
     value: { control: "text" },
-    optionList: { control: "object" },
   },
 };
 
@@ -47,9 +49,8 @@ const FilterTemplate = (args: React.ComponentProps<typeof Filter>) => {
 export const Default: Story = {
   render: (args) => <FilterTemplate {...args} />,
   args: {
-    name: "파트",
+    category: "part",
     value: "전체",
-    optionList: ["전체", "AI/ML", "Server/Cloud", "Web/App", "Devral", "Lead"],
   },
 };
 
@@ -57,8 +58,16 @@ export const Default: Story = {
 export const Generation: Story = {
   render: (args) => <FilterTemplate {...args} />,
   args: {
-    name: "기수",
+    category: "generation",
     value: "전체",
-    optionList: ["전체", "1기", "2기"],
+  },
+};
+
+// 세미나 유형 카테고리
+export const Type: Story = {
+  render: (args) => <FilterTemplate {...args} />,
+  args: {
+    category: "type",
+    value: "전체",
   },
 };

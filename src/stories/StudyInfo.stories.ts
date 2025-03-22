@@ -24,7 +24,7 @@ type Story = StoryObj<typeof StudyInfo>;
 // AI/ML 파트 스토리 생성
 export const AIML: Story = {
   args: {
-    part: "AM",
+    part: "AI/ML",
     content: "AI/ML 파트에서는 다양한 스터디를 진행하고 있습니다. 설명 한 줄.",
   },
 };
@@ -32,7 +32,7 @@ export const AIML: Story = {
 // Server/Cloud 파트 스토리 생성
 export const ServerCloud: Story = {
   args: {
-    part: "SC",
+    part: "Server/Cloud",
     content: "Server/Cloud 파트에서는 다양한 스터디를 진행하고 있습니다. 설명 한 줄.",
   },
 };
@@ -40,7 +40,7 @@ export const ServerCloud: Story = {
 // Web/App 파트 스토리 생성
 export const WebApp: Story = {
   args: {
-    part: "WA",
+    part: "Web/App",
     content: "Web/App 파트에서는 다양한 스터디를 진행하고 있습니다. 설명 한 줄.",
   },
 };
