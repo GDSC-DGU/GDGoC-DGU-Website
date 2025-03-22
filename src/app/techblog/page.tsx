@@ -62,7 +62,6 @@ export default function TechblogPage() {
           지금 참여하기 →
         </a>
       </main>
-
       {/* 푸터 */}
       <footer className='py-6 text-center text-gray-500 text-sm border-t border-gray-800'>
         © 2025 GDGoC. All rights reserved.

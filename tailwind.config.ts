@@ -121,6 +121,12 @@ const config: Config = {
         AppleSDGothicNeo: ["Apple SD Gothic Neo", "sans-serif"],
       },
     },
+    screens: {
+      tablet: "768px",
+      // => @media (min-width: 768px) { ... }
+      desktop: "1440px",
+      // => @media (min-width: 1440px) { ... }
+    },
   },
   plugins: [require("@tailwindcss/typography"), addVariablesForColors],
 } satisfies Config;
