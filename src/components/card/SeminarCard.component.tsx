@@ -1,7 +1,7 @@
 import { PartTag } from "../PartTag";
 import { Card } from "./Card.components";
 
-interface ProjectCardProps {
+interface SeminarCardProps {
   generation: number;
   title: string;
   content: string;
@@ -11,7 +11,7 @@ interface ProjectCardProps {
   category: string;
 }
 
-export const ProjectCard = ({ generation, title, content, src, part, name, category }: ProjectCardProps) => {
+export const SeminarCard = ({ generation, title, content, src, part, name, category }: SeminarCardProps) => {
   return (
     <Card>
       <Card.SmallCardContainer>
