@@ -19,9 +19,8 @@ export const SeminarCard = ({ generation, title, content, src, part, name, categ
         <Card.CardBody>
           <Card.Generation generation={generation} />
           <Card.Title title={title} part={part} />
-          <Card.Content content={content} type='project' />
-          <Card.Speaker name={name} />
-          <Card.Category category={category} />
+          <Card.Content content={content} type='seminar' />
+          <Card.SeminarInfo name={name} category={category} />
         </Card.CardBody>
       </Card.SmallCardContainer>
     </Card>

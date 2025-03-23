@@ -14,7 +14,7 @@ const meta: Meta<typeof SeminarCard> = {
   },
   args: {
     generation: 1,
-    title: "이푸 (IFU)",
+    title: "세미나 제목",
     content:
       "Our project aims to help people with borderline intellectual functioning by raising awareness and providing them with our society and familes",
     src: "https://ifh.cc/g/PrjcTD.png",

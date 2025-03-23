@@ -52,8 +52,9 @@ const Generation = ({ generation }: { generation: number }) => {
 
 const Title = ({ title, part }: { title: string; part?: "AI/ML" | "Server/Cloud" | "Web/App" | "Devral" | "Lead" }) => {
   return (
-    <div className='text-gray-800 font-NotoSansKR font-medium text-Body1'>
-      {title} {part && <PartTag part={part} />}
+    <div className='flex text-gray-800 font-NotoSansKR font-medium text-Body1 gap-[10px]'>
+      <div className='w-[213px]'>{title}</div>
+      <div>{part && <PartTag part={part} />}</div>
     </div>
   );
 };
@@ -67,12 +68,13 @@ const Content = ({ content, type }: { content: string; type: "project" | "semina
   return <div className={contentClass}>{content}</div>;
 };
 
-const Speaker = ({ name }: { name: string }) => {
-  return <p>{name}</p>;
-};
-
-const Category = ({ category }: { category: string }) => {
-  return <p>{category}</p>;
+const SeminarInfo = ({ name, category }: { name: string; category: string }) => {
+  return (
+    <div className='flex text-gray-600 font-NotoSansKR font-medium text-caption gap-2'>
+      <p>{name}</p>
+      <p>{category}</p>
+    </div>
+  );
 };
 
 const StudyLeader = ({ name }: { name: string }) => {
@@ -119,8 +121,7 @@ Card.CardImage = CardImage;
 Card.Generation = Generation;
 Card.Title = Title;
 Card.Content = Content;
-Card.Speaker = Speaker;
-Card.Category = Category;
+Card.SeminarInfo = SeminarInfo;
 Card.StudyLeader = StudyLeader;
 Card.Status = Status;
 Card.MemeberContent = MemberContent;
