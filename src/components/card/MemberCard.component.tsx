@@ -2,7 +2,7 @@ import { Card } from "./Card.components";
 
 interface MemberCardProps {
   generation: number;
-  title: string;
+  name: string;
   src: string;
   part: "AI/ML" | "Server/Cloud" | "Web/App" | "Devral" | "Lead";
   role: string;
@@ -11,23 +11,14 @@ interface MemberCardProps {
   linkedInLink: string;
 }
 
-export const MemberCard = ({
-  generation,
-  title,
-  src,
-  part,
-  role,
-  major,
-  githubLink,
-  linkedInLink,
-}: MemberCardProps) => {
+export const MemberCard = ({ generation, name, src, part, role, major, githubLink, linkedInLink }: MemberCardProps) => {
   return (
     <Card>
       <Card.CardContainer type='member'>
         <Card.CardImage src={src} alt='MemberImage' size='large' />
         <Card.CardBody>
           <Card.Generation generation={generation} />
-          <Card.Title title={title} part={part} />
+          <Card.Title title={name} part={part} />
           <Card.MemeberContent role={role} major={major} github={githubLink} linkedIn={linkedInLink} />
         </Card.CardBody>
       </Card.CardContainer>

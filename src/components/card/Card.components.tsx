@@ -14,7 +14,7 @@ const Card = ({ children }: { children: React.ReactNode }) => {
 };
 
 const CardContainer = ({ children, type }: { children: React.ReactNode; type?: "member" }) => {
-  const heightClass = type === "member" ? "h-[378px]" : "h-[290px]";
+  const heightClass = type === "member" ? "h-[346px]" : "h-[295px]";
   return <div className={`flex w-[280px] ${heightClass} flex-col justify-center items-start gap-4`}>{children}</div>;
 };
 
@@ -89,10 +89,10 @@ const MemberContent = ({
   linkedIn: string;
 }) => {
   return (
-    <div>
+    <div className='flex text-gray-600 font-NotoSansKR font-medium text-Body3 flex-col justify-center gap-2'>
       <p>{role}</p>
       <p>{major}</p>
-      <div>
+      <div className='flex gap-2'>
         <a href={github} target='_blank' rel='noopener noreferrer'>
           <Image src='/images/svg/github-icon.svg' alt='github-icon' width={20} height={20} />
         </a>

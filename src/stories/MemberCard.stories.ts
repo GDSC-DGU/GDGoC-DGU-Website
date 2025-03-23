@@ -13,10 +13,10 @@ const meta: Meta<typeof MemberCard> = {
     layout: "centered",
   },
   args: {
-    generation: 1,
-    title: "세미나 제목",
-    src: "https://ifh.cc/g/PrjcTD.png",
-    part: "AI/ML",
+    generation: 2,
+    name: "김태욱",
+    src: "https://ifh.cc/g/BacNDR.jpg",
+    part: "Web/App",
     role: "General",
     major: "컴퓨터공학과",
     githubLink: "https://github.com/Taew00k",
@@ -30,6 +30,6 @@ type Story = StoryObj<typeof MemberCard>;
 
 export const Default: Story = {
   args: {
-    src: "https://ifh.cc/g/PrjcTD.png",
+    src: "https://ifh.cc/g/BacNDR.jpg",
   },
 };

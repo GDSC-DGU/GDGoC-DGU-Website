@@ -117,9 +117,9 @@ const config: Config = {
         NotoSansKR: ["NotoSansKR"],
       },
       fontSize: {
-        caption: ["0.75rem", { lineHeight: "16px", letterSpacing: "-0.3px" }],
-        Body1: ["1.25rem", { lineHeight: "28px", letterSpacing: "-0.5px" }],
-        Body3: ["0.875rem", { lineHeight: "20px", letterSpacing: "-0.35px" }],
+        caption: ["0.75rem", { lineHeight: "16px", letterSpacing: "-0.3px" }], // 12px
+        Body1: ["1.25rem", { lineHeight: "28px", letterSpacing: "-0.5px" }], // 20px
+        Body3: ["0.875rem", { lineHeight: "20px", letterSpacing: "-0.35px" }], // 14px
       },
     },
     screens: {
