@@ -15,7 +15,6 @@ const Card = ({ children }: { children: React.ReactNode }) => {
 
 const CardContainer = ({ children, type }: { children: React.ReactNode; type?: "member" }) => {
   const heightClass = type === "member" ? "h-[378px]" : "h-[290px]";
-
   return <div className={`flex w-[280px] ${heightClass} flex-col justify-center items-start gap-4`}>{children}</div>;
 };
 

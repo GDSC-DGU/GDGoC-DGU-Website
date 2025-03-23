@@ -14,7 +14,7 @@ export const StudyCard = ({ generation, title, content, src, part, name, status 
   return (
     <Card>
       <Card.CardContainer>
-        <Card.CardImage src={src} alt='projectImage' size='small' />
+        <Card.CardImage src={src} alt='StudyImage' size='small' />
         <Card.CardBody>
           <Card.Generation generation={generation} />
           <Card.Title title={title} part={part} />
