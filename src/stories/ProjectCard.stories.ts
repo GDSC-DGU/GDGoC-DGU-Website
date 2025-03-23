@@ -1,3 +1,7 @@
+/**
+ * 카드 컴포넌트 중 프로젝트 카드 컴포넌트의 스토리 파일입니다.
+ * @author 태욱
+ */
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { ProjectCard } from "../components/card/ProjectCard.component";
