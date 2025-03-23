@@ -1,16 +1,16 @@
 import { Card } from "./Card.components";
 
-interface SeminarCardProps {
+interface StudyCardProps {
   generation: number;
   title: string;
   content: string;
   src: string;
   part: "AI/ML" | "Server/Cloud" | "Web/App" | "Devral" | "Lead";
   name: string;
-  category: string;
+  status: string;
 }
 
-export const SeminarCard = ({ generation, title, content, src, part, name, category }: SeminarCardProps) => {
+export const StudyCard = ({ generation, title, content, src, part, name, status }: StudyCardProps) => {
   return (
     <Card>
       <Card.CardContainer>
@@ -18,8 +18,8 @@ export const SeminarCard = ({ generation, title, content, src, part, name, categ
         <Card.CardBody>
           <Card.Generation generation={generation} />
           <Card.Title title={title} part={part} />
-          <Card.Content content={content} type='seminar' />
-          <Card.SeminarInfo name={name} category={category} />
+          <Card.Content content={content} type='study' />
+          <Card.StudyInfo name={name} status={status} />
         </Card.CardBody>
       </Card.CardContainer>
     </Card>

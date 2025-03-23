@@ -13,24 +13,14 @@ const Card = ({ children }: { children: React.ReactNode }) => {
   return <div className='rounded-[16px] border border-gray-300 p-4'>{children}</div>;
 };
 
-const SmallCardContainer = ({ children }: { children: React.ReactNode }) => {
-  return <div className='flex w-[280px] h-[290px] flex-col justify-center items-start gap-4'>{children}</div>;
-};
+const CardContainer = ({ children, type }: { children: React.ReactNode; type?: "member" }) => {
+  const heightClass = type === "member" ? "h-[378px]" : "h-[290px]";
 
-const LargeCardContainer = ({ children }: { children: React.ReactNode }) => {
-  return <div>{children}</div>;
+  return <div className={`flex w-[280px] ${heightClass} flex-col justify-center items-start gap-4`}>{children}</div>;
 };
 
 const CardBody = ({ children }: { children: React.ReactNode }) => {
-  return <div className='flex flex-col justify-center gap-2'>{children}</div>;
-};
-
-const CardContentHeader = ({ children }: { children: React.ReactNode }) => {
-  return <div>{children}</div>;
-};
-
-const CardContentFooter = ({ children }: { children: React.ReactNode }) => {
-  return <div>{children}</div>;
+  return <div className='flex w-[280px] flex-col justify-center gap-2'>{children}</div>;
 };
 
 const CardImage = ({ src, alt, size }: { src: string; alt: string; size: "small" | "large" }) => {
@@ -52,14 +42,14 @@ const Generation = ({ generation }: { generation: number }) => {
 
 const Title = ({ title, part }: { title: string; part?: "AI/ML" | "Server/Cloud" | "Web/App" | "Devral" | "Lead" }) => {
   return (
-    <div className='flex text-gray-800 font-NotoSansKR font-medium text-Body1 gap-[10px]'>
-      <div className='w-[213px]'>{title}</div>
+    <div className='flex text-gray-800 font-NotoSansKR font-medium text-Body1 gap-[10px] justify-between'>
+      <div className='w-[213px] line-clamp-1'>{title}</div>
       <div>{part && <PartTag part={part} />}</div>
     </div>
   );
 };
 
-const Content = ({ content, type }: { content: string; type: "project" | "seminar" }) => {
+const Content = ({ content, type }: { content: string; type: string }) => {
   const contentClass = clsx(
     "text-gray-600 font-NotoSansKR font-medium text-Body3",
     type === "project" ? "h-[59px] line-clamp-3" : "h-[40px] line-clamp-2",
@@ -77,12 +67,15 @@ const SeminarInfo = ({ name, category }: { name: string; category: string }) => 
   );
 };
 
-const StudyLeader = ({ name }: { name: string }) => {
-  return <p>{name}</p>;
-};
-
-const Status = ({ status }: { status: string }) => {
-  return <p>{status}</p>;
+const StudyInfo = ({ name, status }: { name: string; status: string }) => {
+  return (
+    <div className='flex justify-between'>
+      <div className='flex text-gray-600 font-NotoSansKR font-medium text-caption gap-2'>
+        <p>팀장</p> <p>{name}</p>
+      </div>
+      <div className='text-blue font-NotoSansKR font-medium text-caption'>{status}</div>
+    </div>
+  );
 };
 
 const MemberContent = ({
@@ -112,18 +105,14 @@ const MemberContent = ({
   );
 };
 
-Card.SmallCardContainer = SmallCardContainer;
-Card.LargeCardContainer = LargeCardContainer;
+Card.CardContainer = CardContainer;
 Card.CardBody = CardBody;
-Card.CardContentHeader = CardContentHeader;
-Card.CardContentFooter = CardContentFooter;
 Card.CardImage = CardImage;
 Card.Generation = Generation;
 Card.Title = Title;
 Card.Content = Content;
 Card.SeminarInfo = SeminarInfo;
-Card.StudyLeader = StudyLeader;
-Card.Status = Status;
+Card.StudyInfo = StudyInfo;
 Card.MemeberContent = MemberContent;
 
 export { Card };
