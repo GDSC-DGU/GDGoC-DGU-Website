@@ -5,12 +5,14 @@
  */
 import Image from "next/image";
 
+import clsx from "clsx";
+
 const Card = ({ children }: { children: React.ReactNode }) => {
-  return <div>{children}</div>;
+  return <div className='rounded-[16px] border border-gray-300 p-4'>{children}</div>;
 };
 
 const SmallCardContainer = ({ children }: { children: React.ReactNode }) => {
-  return <div>{children}</div>;
+  return <div className='flex w-[280px] h-[290px] flex-col justify-center items-start gap-4'>{children}</div>;
 };
 
 const LargeCardContainer = ({ children }: { children: React.ReactNode }) => {
@@ -18,7 +20,7 @@ const LargeCardContainer = ({ children }: { children: React.ReactNode }) => {
 };
 
 const CardBody = ({ children }: { children: React.ReactNode }) => {
-  return <div>{children}</div>;
+  return <div className='flex flex-col justify-center gap-2'>{children}</div>;
 };
 
 const CardContentHeader = ({ children }: { children: React.ReactNode }) => {
@@ -30,21 +32,33 @@ const CardContentFooter = ({ children }: { children: React.ReactNode }) => {
 };
 
 const CardImage = ({ src, alt, size }: { src: string; alt: string; size: "small" | "large" }) => {
-  const dimensions = size === "large" ? { width: 280, height: 194 } : { width: 280, height: 155 };
+  const containerClass = clsx(
+    "relative overflow-hidden rounded-[8px] w-[280px]",
+    size === "large" ? "h-[194px]" : "h-[155px]",
+  );
 
-  return <Image src={src} alt={alt} {...dimensions} />;
+  return (
+    <div className={containerClass}>
+      <Image src={src} alt={alt} fill className='object-cover' />
+    </div>
+  );
 };
 
 const Generation = ({ generation }: { generation: number }) => {
-  return <div>{generation}기</div>;
+  return <div className='text-gray-600 font-NotoSansKR font-bold text-caption'>{generation}기</div>;
 };
 
 const Title = ({ title }: { title: string }) => {
-  return <p>{title}</p>;
+  return <div className='text-gray-800 font-NotoSansKR font-medium text-Body1'>{title}</div>;
 };
 
-const Content = ({ content }: { content: string }) => {
-  return <div>{content}</div>;
+const Content = ({ content, type }: { content: string; type: "project" | "seminar" }) => {
+  const contentClass = clsx(
+    "text-gray-600 font-NotoSansKR font-medium text-Body3 line-clamp-3",
+    type === "project" ? "h-[59px]" : "h-[40px]",
+  );
+
+  return <div className={contentClass}>{content}</div>;
 };
 
 const Speaker = ({ name }: { name: string }) => {

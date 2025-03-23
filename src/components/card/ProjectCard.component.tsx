@@ -15,7 +15,7 @@ export const ProjectCard = ({ generation, title, content, src }: ProjectCardProp
         <Card.CardBody>
           <Card.Generation generation={generation} />
           <Card.Title title={title} />
-          <Card.Content content={content} />
+          <Card.Content content={content} type='project' />
         </Card.CardBody>
       </Card.SmallCardContainer>
     </Card>
