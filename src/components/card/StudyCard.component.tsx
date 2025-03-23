@@ -2,19 +2,11 @@
  * 모듈화한 카드 컴포넌트들을 조합하여 만든 스터디 카드 컴포넌트입니다.
  * @author 태욱
  */
+import { CardProps } from "@/src/types";
+
 import { Card } from "./Card.components";
 
-interface StudyCardProps {
-  generation: number;
-  title: string;
-  content: string;
-  src: string;
-  part: "AI/ML" | "Server/Cloud" | "Web/App" | "Devral" | "Lead";
-  name: string;
-  status: string;
-}
-
-export const StudyCard = ({ generation, title, content, src, part, name, status }: StudyCardProps) => {
+export const StudyCard = ({ generation, title, content, src, part, name, status }: CardProps) => {
   return (
     <Card>
       <Card.CardContainer>

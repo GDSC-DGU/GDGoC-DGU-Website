@@ -14,7 +14,7 @@ const meta: Meta<typeof MemberCard> = {
   },
   args: {
     generation: 2,
-    name: "김태욱",
+    memberName: "김태욱",
     src: "https://ifh.cc/g/BacNDR.jpg",
     part: "Web/App",
     role: "General",
