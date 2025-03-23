@@ -7,6 +7,8 @@ import Image from "next/image";
 
 import clsx from "clsx";
 
+import { PartTag } from "../PartTag";
+
 const Card = ({ children }: { children: React.ReactNode }) => {
   return <div className='rounded-[16px] border border-gray-300 p-4'>{children}</div>;
 };
@@ -48,14 +50,18 @@ const Generation = ({ generation }: { generation: number }) => {
   return <div className='text-gray-600 font-NotoSansKR font-bold text-caption'>{generation}기</div>;
 };
 
-const Title = ({ title }: { title: string }) => {
-  return <div className='text-gray-800 font-NotoSansKR font-medium text-Body1'>{title}</div>;
+const Title = ({ title, part }: { title: string; part?: "AI/ML" | "Server/Cloud" | "Web/App" | "Devral" | "Lead" }) => {
+  return (
+    <div className='text-gray-800 font-NotoSansKR font-medium text-Body1'>
+      {title} {part && <PartTag part={part} />}
+    </div>
+  );
 };
 
 const Content = ({ content, type }: { content: string; type: "project" | "seminar" }) => {
   const contentClass = clsx(
-    "text-gray-600 font-NotoSansKR font-medium text-Body3 line-clamp-3",
-    type === "project" ? "h-[59px]" : "h-[40px]",
+    "text-gray-600 font-NotoSansKR font-medium text-Body3",
+    type === "project" ? "h-[59px] line-clamp-3" : "h-[40px] line-clamp-2",
   );
 
   return <div className={contentClass}>{content}</div>;
@@ -114,7 +120,7 @@ Card.Generation = Generation;
 Card.Title = Title;
 Card.Content = Content;
 Card.Speaker = Speaker;
-Card.Cateogry = Category;
+Card.Category = Category;
 Card.StudyLeader = StudyLeader;
 Card.Status = Status;
 Card.MemeberContent = MemberContent;
