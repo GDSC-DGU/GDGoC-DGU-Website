@@ -2,11 +2,19 @@
  * 모듈화한 카드 컴포넌트들을 조합하여 만든 세미나 카드 컴포넌트입니다.
  * @author 태욱
  */
-import { CardProps } from "@/src/types";
-
 import { Card } from "./Card.components";
 
-export const SeminarCard = ({ generation, title, content, src, part, name, category }: CardProps) => {
+interface SeminarCardProps {
+  generation: number;
+  title: string;
+  content: string;
+  src: string;
+  part: "AI/ML" | "Server/Cloud" | "Web/App" | "Devral" | "Lead";
+  name: string;
+  category: string;
+}
+
+export const SeminarCard = ({ generation, title, content, src, part, name, category }: SeminarCardProps) => {
   return (
     <Card>
       <Card.CardContainer>

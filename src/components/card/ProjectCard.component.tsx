@@ -2,11 +2,16 @@
  * 모듈화한 카드 컴포넌트들을 조합하여 만든 프로젝트 카드 컴포넌트입니다.
  * @author 태욱
  */
-import { CardProps } from "@/src/types";
-
 import { Card } from "./Card.components";
 
-export const ProjectCard = ({ generation, title, content, src }: CardProps) => {
+interface ProjectCardProps {
+  generation: number;
+  title: string;
+  content: string;
+  src: string;
+}
+
+export const ProjectCard = ({ generation, title, content, src }: ProjectCardProps) => {
   return (
     <Card>
       <Card.CardContainer>
