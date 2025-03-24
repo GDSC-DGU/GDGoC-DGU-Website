@@ -30,3 +30,26 @@ body {
     text-wrap: balance;
   }
 }
+
+@layer base {
+  @font-face {
+    font-family: "NotoSansKR";
+    font-weight: 400;
+    font-style: normal;
+    src: url("/fonts/NotoSansKR-Regular.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "NotoSansKR";
+    font-weight: 500;
+    font-style: normal;
+    src: url("/fonts/NotoSansKR-Medium.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "NotoSansKR";
+    font-weight: 700;
+    font-style: normal;
+    src: url("/fonts/NotoSansKR-Bold.woff2") format("woff2");
+  }
+}
