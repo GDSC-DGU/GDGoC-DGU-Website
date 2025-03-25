@@ -6,8 +6,10 @@ import { cn } from "@/src/function/utils";
 
 /**
  * 사이트 상단 네비게이션 헤더 컴포넌트를 모듈화한 컴포넌트입니다.
+ * 반응형 디자인을 지원하며, 데스크톱에서는 가로 메뉴로, 모바일에서는 햄버거 메뉴로 표시됩니다.
+ * 현재 페이지 경로에 따라 메뉴 항목이 하이라이트됩니다.
  * Compound Component 패턴으로 설계되었으며, 반응형 디자인을 지원합니다.
- * @author 동현 (수정)
+ * @author 동현
  */
 
 interface HeaderProps {
@@ -70,6 +72,7 @@ const NavLink = ({
   );
 };
 
+// 모바일 네비게이션 링크 공통 로직
 const MobileNavLink = ({ href, children, pathname }: { href: string; children: React.ReactNode; pathname: string }) => {
   return (
     <Link

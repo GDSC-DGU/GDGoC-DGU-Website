@@ -7,11 +7,7 @@ import { isMobile } from "@/src/function/utils";
 import HeaderComponents from "../../components/header/Header.components";
 
 /**
- * 사이트 상단 네비게이션 헤더 컴포넌트입니다.
- * 반응형 디자인을 지원하며, 데스크톱에서는 가로 메뉴로, 모바일에서는 햄버거 메뉴로 표시됩니다.
- * 현재 페이지 경로에 따라 메뉴 항목이 하이라이트됩니다.
- * @author 도형
- * 컴파운드 컴포넌트로 구성된 모듈들의 조합입니다.
+ * Header Component를 조합한 공통 Header입니다.
  * @author 동현
  */
 
