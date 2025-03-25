@@ -1,9 +1,12 @@
 import Image from "next/image";
 
+import Header from "./header/Header";
+
 export default function Home() {
   return (
     <div className='min-h-screen flex flex-col bg-black text-white'>
       {/* 헤더 */}
+      <Header isBlack={true} />
       <header className='w-full py-4 px-8 flex justify-between items-center border-b border-gray-800'>
         {/* 로고 */}
 
