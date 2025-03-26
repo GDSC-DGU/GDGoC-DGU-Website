@@ -108,10 +108,9 @@ const DesktopNav = ({ isBlack }: { isBlack: boolean }) => {
         </NavLink>
         <div className='relative inline-flex rounded-full p-[3px] overflow-hidden'>
           <div
-            className='absolute inset-0 w-[136px] h-[136px] z-80 rounded-full bg-gradient-to-r from-red-500-P via-yellow-500 via-green-500 to-blue-500 animate-rotateBorder'
+            className='absolute inset-0 w-[140px] h-[140px] z-80 rounded-full bg-gradient-to-r from-red-500-P via-yellow-500 via-green-500 to-blue-500 animate-rotateBorder'
             style={{
               top: "-90%",
-              left: "-2%",
               transformOrigin: "center",
             }}
           />
@@ -133,7 +132,7 @@ const DesktopNav = ({ isBlack }: { isBlack: boolean }) => {
 const MobileToggle = ({ menuOpen, toggleMenu }: { menuOpen: boolean; toggleMenu: () => void }) => {
   return (
     <button
-      className='md:hidden px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gray-300'
+      className='md:hidden p-3 focus:outline-none focus:ring-2 focus:ring-gray-300'
       onClick={toggleMenu}
       aria-label='Toggle Menu'
     >
@@ -153,11 +152,6 @@ const MobileToggle = ({ menuOpen, toggleMenu }: { menuOpen: boolean; toggleMenu:
 // 모바일 네비게이션 메뉴
 const MobileNav = ({ menuOpen }: { menuOpen: boolean }) => {
   const pathname = usePathname();
-
-  const isActive = (path: string) => {
-    if (path === "/") return pathname === "/";
-    return pathname.startsWith(path);
-  };
 
   return (
     <div

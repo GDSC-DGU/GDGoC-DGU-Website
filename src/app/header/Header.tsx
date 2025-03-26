@@ -36,9 +36,13 @@ const Header = ({ isBlack = false }: HeaderProps) => {
   return (
     <HeaderComponents isBlack={isBlack}>
       <HeaderComponents.HeaderLogo />
-      <HeaderComponents.DesktopNav isBlack={isBlack} />
-      {isMobileView && <HeaderComponents.MobileToggle menuOpen={menuOpen} toggleMenu={toggleMenu} />}
-      {isMobileView && <HeaderComponents.MobileNav menuOpen={menuOpen} />}
+      {!isMobileView && <HeaderComponents.DesktopNav isBlack={isBlack} />}
+      {isMobileView && (
+        <>
+          <HeaderComponents.MobileToggle menuOpen={menuOpen} toggleMenu={toggleMenu} />
+          <HeaderComponents.MobileNav menuOpen={menuOpen} />
+        </>
+      )}
     </HeaderComponents>
   );
 };

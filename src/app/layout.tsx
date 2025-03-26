@@ -8,6 +8,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Footer } from "../components/Footer.component";
 import { prefix } from "../constants/prefix";
 import "./globals.css";
+import Header from "./header/Header";
 import { DefaultMetadata, DefaultOpenGraph } from "./shared-metadata";
 
 /**
@@ -46,6 +47,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
 
       <body className='flex antialiased h-screen overflow-hidden font-NotoSansKR bg-gray-100'>
+        <Header isBlack={false} />
+
         {/* GTM 컴포넌트를 조건부로 배포 환경에서만 적용 */}
         {GTM_ID && process.env.NODE_ENV === "production" && <GoogleTagManager gtmId={GTM_ID} />}
         {/* Google Tag Manager (noscript) - <body> 바로 뒤 */}
@@ -60,7 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </noscript> */}
 
         <div className='lg:pl-2 lg:pt-2 bg-gray-100 flex-1 overflow-y-auto'>
-          <div className='flex-1 bg-white min-h-screen lg:rounded-tl-xl border border-transparent lg:border-neutral-200 overflow-y-auto'>
+          <div className='flex-1 bg-black min-h-screen lg:rounded-tl-xl border border-transparent lg:border-neutral-200 overflow-y-auto'>
             {/*  GA 컴포넌트를 조건부로 배포 환경에서만 적용 */}
             {GA_ID && process.env.NODE_ENV === "production" && <GoogleAnalytics gaId={GA_ID} />}
             {children}
