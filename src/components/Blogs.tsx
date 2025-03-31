@@ -69,11 +69,11 @@ export const Blogs = ({ blogs }: { blogs: Blog[] }) => {
             <div className='grid grid-cols-1 md:grid-cols-4 gap-4 relative z-20'>
               <Image
                 src={blog.image}
-                alt='thumbnail'
-                height='200'
-                width='200'
+                alt='blog thumbnail'
+                height='196'
+                width='328'
                 objectFit='cover'
-                className='rounded-md object-contain h-40 w-60'
+                className='rounded-md object-contain h-196 w-328'
               />
               <div className='flex flex-col col-span-3'>
                 <H1 className='font-medium text-lg md:text-lg lg:text-lg'>{blog.title}</H1>
