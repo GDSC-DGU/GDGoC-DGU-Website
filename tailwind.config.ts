@@ -114,11 +114,12 @@ const config: Config = {
         "blue-900": "#3842AD",
       },
       fontFamily: {
-        sans: ["Pretendard", "Apple SD Gothic Neo", "sans-serif"],
-        Pretendard: ["Pretendard", "sans-serif"],
-        Tossface: ["Tossface", "sans-serif"],
-        Poppins: ["Poppins", "sans-serif"],
-        AppleSDGothicNeo: ["Apple SD Gothic Neo", "sans-serif"],
+        NotoSansKR: ["NotoSansKR"],
+      },
+      fontSize: {
+        caption: ["0.75rem", { lineHeight: "16px", letterSpacing: "-0.3px" }], // 12px
+        Body1: ["1.25rem", { lineHeight: "28px", letterSpacing: "-0.5px" }], // 20px
+        Body3: ["0.875rem", { lineHeight: "20px", letterSpacing: "-0.35px" }], // 14px
       },
     },
     screens: {
