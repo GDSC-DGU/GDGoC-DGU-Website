@@ -47,7 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
 
       <body className='flex antialiased h-screen overflow-hidden font-NotoSansKR bg-gray-100'>
-        <Header isBlack={false} />
+        <Header />
 
         {/* GTM 컴포넌트를 조건부로 배포 환경에서만 적용 */}
         {GTM_ID && process.env.NODE_ENV === "production" && <GoogleTagManager gtmId={GTM_ID} />}
