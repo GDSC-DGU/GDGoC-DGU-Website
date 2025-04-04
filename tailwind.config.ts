@@ -113,14 +113,22 @@ const config: Config = {
         "blue-800": "#3D62CD",
         "blue-900": "#3842AD",
       },
+      boxShadow: {
+        "gray-gradiate": "0 0 5px 0 rgba(0, 0, 0, 0.25)",
+        "green-gradiate": "0px 0px 10px 0px rgba(15, 157, 88, 0.70)",
+      },
       fontFamily: {
         NotoSansKR: ["NotoSansKR"],
       },
       fontSize: {
         caption: ["0.75rem", { lineHeight: "16px", letterSpacing: "-0.3px" }], // 12px
         Body1: ["1.25rem", { lineHeight: "28px", letterSpacing: "-0.5px" }], // 20px
-        Body2: ["1rem", { lineHeight: "24px", letterSpacing: "-0.4px" }],
+        Body2: ["1rem", { lineHeight: "24px", letterSpacing: "-0.4px" }], // 16px
         Body3: ["0.875rem", { lineHeight: "20px", letterSpacing: "-0.35px" }], // 14px
+        Body4: ["1.25rem", { lineHeight: "30px", letterSpacing: "-0.5px" }], // 20px
+        Body5: ["0.625rem", { lineHeight: "15px", letterSpacing: "-0.25px" }], // 10px
+        Head1: ["1.625rem", { lineHeight: "35px", letterSpacing: "-0.625px" }], //26px
+        Head2: ["0.75rem", { lineHeight: "18px", letterSpacing: "-0.3px" }], // 12px
       },
     },
     screens: {
