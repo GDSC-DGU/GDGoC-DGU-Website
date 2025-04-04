@@ -3,7 +3,6 @@
  * mobile, tablet, desktop일때 각각 다르게 반응형으로 구현했습니다.
  * @author 태욱
  */
-
 import Image from "next/image";
 import Link from "next/link";
 
@@ -60,7 +59,7 @@ export const BlogCard = ({ src, generation, title, content, blogUrl, tags }: Blo
           <p className='text-gray-600 h-[60px] font-NotoSansKR font-medium text-Body3 line-clamp-3'>{content}</p>
 
           {/* 태그 영역 */}
-          <div className='flex gap-2 flex-wrap w-[260px] h-[34px] overflow-hidden'>
+          <div className='flex gap-2 flex-wrap h-[34px] overflow-hidden'>
             {tags.map((tag, index) => (
               <TechStack key={tag} text={tag} color={colors[index % colors.length]} />
             ))}
