@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import Header from "./header/Header";
+
 export default function Home() {
   return (
     <div className='min-h-screen flex flex-col bg-black text-white'>
@@ -62,11 +64,6 @@ export default function Home() {
           지금 참여하기 →
         </a>
       </main>
-
-      {/* 푸터 */}
-      <footer className='py-6 text-center text-gray-500 text-sm border-t border-gray-800'>
-        © 2025 GDGoC. All rights reserved.
-      </footer>
     </div>
   );
 }

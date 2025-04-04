@@ -3,7 +3,6 @@ import Image from "next/image";
 export default function TechblogPage() {
   return (
     <div className='min-h-screen flex flex-col bg-black text-white'>
-      {/* 헤더 */}
       <header className='w-full py-4 px-8 flex justify-between items-center border-b border-gray-800'>
         {/* 로고 */}
 
@@ -62,10 +61,6 @@ export default function TechblogPage() {
           지금 참여하기 →
         </a>
       </main>
-      {/* 푸터 */}
-      <footer className='py-6 text-center text-gray-500 text-sm border-t border-gray-800'>
-        © 2025 GDGoC. All rights reserved.
-      </footer>
     </div>
   );
 }
