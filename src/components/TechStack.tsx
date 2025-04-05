@@ -20,9 +20,9 @@ interface TechStackProps {
 
 export const TechStack = ({ text, color }: TechStackProps) => {
   return (
-    <div className='flex flex-wrap'>
+    <div className='flex flex-wrap h-[34px]'>
       <HighlightText
-        className={clsx("text-sm md:text-sm lg:text-sm font-normal rounded-md`", {
+        className={clsx("font-NotoSansKR font-medium text-Body2`", {
           "text-red bg-red-50 ": color === "red",
           "text-blue bg-blue-50": color === "blue",
           "text-green bg-green-50": color === "green",

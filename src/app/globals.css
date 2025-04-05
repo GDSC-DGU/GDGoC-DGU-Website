@@ -52,4 +52,22 @@ body {
     font-style: normal;
     src: url("/fonts/NotoSansKR-Bold.woff2") format("woff2");
   }
+
+  @layer components {
+    .card-dynamic-size {
+      @apply absolute left-0 top-0 h-full w-full;
+    }
+
+    .card-front-back {
+      @apply z-10 flex flex-col rounded-[8px] p-[18px] shadow-md;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+  }
+
+  @layer utilities {
+    .rotate-y-180 {
+      transform: rotateY(180deg);
+    }
+  }
 }
