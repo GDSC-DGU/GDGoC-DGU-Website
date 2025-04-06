@@ -15,7 +15,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
     <Card>
       <Card.CardContainer>
-        <Card.CardImage src={src ? src : ""} alt='projectImage' size='small' />
+        <Card.CardImage src={src} alt='projectImage' size='small' />
         <Card.CardBody>
           <Card.Generation generation={generation} />
           <Card.Title title={title} />

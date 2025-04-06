@@ -5,7 +5,7 @@ export type Project = {
   content: string;
   leader: string;
   src?: string;
-  members: string[];
+  members: string[] | string;
   githubLink: string;
   youtubeLink?: string;
 };

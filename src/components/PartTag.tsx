@@ -20,7 +20,7 @@ export const PartTag = ({ part }: PartTagProps) => {
   return (
     <div className='flex flex-wrap'>
       <HighlightText
-        className={clsx("text-xs font-semibold rounded-md px-3 py-1 bg-white border-2", {
+        className={clsx("!text-caption font-semibold rounded-md px-3 py-1 bg-white border-2", {
           "text-red border-red": part === "AI/ML",
           "text-blue border-blue": part === "Server/Cloud",
           "text-green border-green": part === "Web/App",

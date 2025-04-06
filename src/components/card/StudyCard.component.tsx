@@ -15,7 +15,7 @@ export const StudyCard = ({ study }: StudyCardProps) => {
   return (
     <Card>
       <Card.CardContainer>
-        <Card.CardImage src={src ? src : ""} alt='StudyImage' size='small' />
+        <Card.CardImage src={src} alt='StudyImage' size='small' />
         <Card.CardBody>
           <Card.Generation generation={generation} />
           <Card.Title title={title} part={part} />

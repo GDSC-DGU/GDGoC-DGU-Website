@@ -9,4 +9,5 @@ export type Study = {
   name: string;
   part: MemberPart;
   status: string;
+  members: string[] | string;
 };

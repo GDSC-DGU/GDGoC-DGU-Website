@@ -10,7 +10,7 @@ import clsx from "clsx";
 import { PartTag } from "../PartTag";
 
 const Card = ({ children }: { children: React.ReactNode }) => {
-  return <div className='rounded-[16px] border w-fit border-gray-300 p-4'>{children}</div>;
+  return <div className='rounded-[16px] bg-white border w-fit border-gray-300 p-4'>{children}</div>;
 };
 
 const CardContainer = ({ children, type }: { children: React.ReactNode; type?: "member" }) => {
@@ -22,15 +22,16 @@ const CardBody = ({ children }: { children: React.ReactNode }) => {
   return <div className='flex w-[280px] flex-col justify-center gap-2'>{children}</div>;
 };
 
-const CardImage = ({ src, alt, size }: { src: string; alt: string; size: "small" | "large" }) => {
+const CardImage = ({ src, alt, size }: { src?: string; alt: string; size: "small" | "large" }) => {
   const containerClass = clsx(
     "relative overflow-hidden rounded-[8px] w-[280px]",
     size === "large" ? "h-[194px]" : "h-[155px]",
   );
+  const defaultImage = "/images/png/defaultImage.png";
 
   return (
     <div className={containerClass}>
-      <Image src={src} alt={alt} fill className='object-cover' />
+      <Image src={src ? src : defaultImage} alt={alt} fill className='object-cover' />
     </div>
   );
 };

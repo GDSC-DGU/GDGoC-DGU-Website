@@ -15,7 +15,7 @@ export const MemberCard = ({ member }: MemberCardProps) => {
   return (
     <Card>
       <Card.CardContainer type='member'>
-        <Card.CardImage src={src ? src : ""} alt='MemberImage' size='large' />
+        <Card.CardImage src={src} alt='MemberImage' size='large' />
         <Card.CardBody>
           <Card.Generation generation={generation} />
           <Card.Title title={name} part={part} />

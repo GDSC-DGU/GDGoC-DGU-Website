@@ -15,7 +15,7 @@ export const SeminarCard = ({ seminar }: SeminarCardProps) => {
   return (
     <Card>
       <Card.CardContainer>
-        <Card.CardImage src={src ? src : ""} alt='SeminarImage' size='small' />
+        <Card.CardImage src={src} alt='SeminarImage' size='small' />
         <Card.CardBody>
           <Card.Generation generation={generation} />
           <Card.Title title={title} part={part} />
