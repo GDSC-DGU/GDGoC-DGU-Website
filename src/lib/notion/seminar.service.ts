@@ -3,6 +3,12 @@ import { Seminar } from "@/src/types";
 import { getRelationTitle } from "./getRelationTitle";
 import { notion } from "./notion.client";
 
+/**
+ * Notion에 저장된 세미나 데이터베이스(1기, 2기)를 병합하여 세미나 리스트를 반환합니다.
+ * Speaker는 관계형 필드로, getRelationTitle 함수를 사용하여 추출합니다.
+ * @author 정선
+ */
+
 const dbIds = [process.env.NOTION_SEMINAR_DATABASE_ID_GEN1!, process.env.NOTION_SEMINAR_DATABASE_ID_GEN2!];
 
 export const getSeminarList = async (): Promise<Seminar[]> => {

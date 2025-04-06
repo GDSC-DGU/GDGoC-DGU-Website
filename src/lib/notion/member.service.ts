@@ -2,6 +2,13 @@ import { Member } from "@/src/types/member";
 
 import { notion } from "./notion.client";
 
+/**
+ * Notion에 저장된 멤버 데이터베이스(1기, 2기)를 모두 불러와 병합하고,
+ * 파트 우선순위 및 이름 가나다 순서대로 정렬 후 정렬된 멤버 리스트를 반환합니다.
+ * - Lead > Devral > AI/ML > Web/App > Server/Cloud
+ * @author 정선
+ */
+
 const dbIds = [process.env.NOTION_MEMBER_DATABASE_ID_GEN1!, process.env.NOTION_MEMBER_DATABASE_ID_GEN2!];
 
 export const getMemberList = async (): Promise<Member[]> => {

@@ -11,7 +11,5 @@ export const useSeminarQuery = () => {
   return useQuery<Seminar[]>({
     queryKey: ["seminars"],
     queryFn: fetchSeminars,
-    staleTime: 1000 * 60 * 5,
-    refetchOnWindowFocus: false,
   });
 };

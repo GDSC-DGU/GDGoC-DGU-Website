@@ -1,5 +1,6 @@
 /**
  * 모듈화한 카드 컴포넌트들을 조합하여 만든 스터디 카드 컴포넌트입니다.
+ * StudyCardProps는 Study 타입을 기반으로 정의하였습니다.
  * @author 태욱
  */
 import { Study } from "@/src/types";

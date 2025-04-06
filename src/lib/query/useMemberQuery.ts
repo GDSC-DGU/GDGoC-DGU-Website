@@ -11,7 +11,5 @@ export const useMemberQuery = () => {
   return useQuery<Member[]>({
     queryKey: ["members"],
     queryFn: fetchMembers,
-    staleTime: 1000 * 60 * 5,
-    refetchOnWindowFocus: false,
   });
 };

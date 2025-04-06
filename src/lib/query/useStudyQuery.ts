@@ -11,7 +11,5 @@ export const useStudyQuery = () => {
   return useQuery<Study[]>({
     queryKey: ["studys"],
     queryFn: fetchStudys,
-    staleTime: 1000 * 60 * 5,
-    refetchOnWindowFocus: false,
   });
 };
