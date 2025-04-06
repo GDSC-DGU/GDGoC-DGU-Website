@@ -10,7 +10,7 @@ import clsx from "clsx";
 import { PartTag } from "../PartTag";
 
 const Card = ({ children }: { children: React.ReactNode }) => {
-  return <div className='rounded-[16px] border border-gray-300 p-4'>{children}</div>;
+  return <div className='rounded-[16px] border w-fit border-gray-300 p-4'>{children}</div>;
 };
 
 const CardContainer = ({ children, type }: { children: React.ReactNode; type?: "member" }) => {
