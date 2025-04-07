@@ -5,6 +5,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { SeminarCard } from "../components/card/SeminarCard.component";
+import { Seminar } from "../types";
 
 const meta: Meta<typeof SeminarCard> = {
   title: "Components/Card/SeminarCard",
@@ -13,14 +14,16 @@ const meta: Meta<typeof SeminarCard> = {
     layout: "centered",
   },
   args: {
-    generation: 1,
-    title: "세미나 제목",
-    content:
-      "Our project aims to help people with borderline intellectual functioning by raising awareness and providing them with our society and familes",
-    src: "https://ifh.cc/g/PrjcTD.png",
-    part: "AI/ML",
-    name: "김태욱",
-    category: "캠핑세미나",
+    seminar: {
+      generation: 1,
+      title: "세미나 제목",
+      content:
+        "Our project aims to help people with borderline intellectual functioning by raising awareness and providing them with our society and familes",
+      src: "https://ifh.cc/g/PrjcTD.png",
+      part: "AI/ML",
+      name: "김태욱",
+      category: "Camping Seminar",
+    } as Seminar,
   },
 };
 
@@ -28,8 +31,4 @@ export default meta;
 
 type Story = StoryObj<typeof SeminarCard>;
 
-export const Default: Story = {
-  args: {
-    src: "https://ifh.cc/g/PrjcTD.png",
-  },
-};
+export const Default: Story = {};
