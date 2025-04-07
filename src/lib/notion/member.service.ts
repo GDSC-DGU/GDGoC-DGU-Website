@@ -25,7 +25,7 @@ export const getMemberList = async (): Promise<Member[]> => {
         generation: props.Generation?.number ?? index + 1,
         role: props.Role?.select?.name ?? "",
         githubLink: props.Github?.rich_text?.[0]?.plain_text ?? "",
-        linkedInLink: "", // 현재 없음
+        linkedInLink: props.LinkedInLink?.rich_text?.[0]?.plain_text ?? "",
         src: page.cover?.external?.url ?? "",
       };
     }),
