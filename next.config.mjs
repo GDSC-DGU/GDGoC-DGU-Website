@@ -18,7 +18,12 @@ const options = {
 
 const nextConfig = {
   images: {
-    domains: ["api.microlink.io", "images.unsplash.com", "prod-files-secure.s3.us-west-2.amazonaws.com"],
+    domains: [
+      "www.notion.so",
+      "api.microlink.io",
+      "images.unsplash.com",
+      "prod-files-secure.s3.us-west-2.amazonaws.com",
+    ],
     formats: ["image/avif", "image/webp"],
   },
   compiler: {
