@@ -18,6 +18,6 @@ export * from "./TechStack";
 export * from "./Typography.component";
 export * from "./PartTag";
 export * from "./Filter.component";
-export * from "./StudyInfo.component";
+export * from "./study/StudyInfo.component";
 export * from "./Pagination.component";
 export * from "./Indicator.component";

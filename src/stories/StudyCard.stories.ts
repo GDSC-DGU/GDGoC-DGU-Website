@@ -5,6 +5,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { StudyCard } from "../components/card/StudyCard.component";
+import { Study } from "../types";
 
 const meta: Meta<typeof StudyCard> = {
   title: "Components/Card/StudyCard",
@@ -13,13 +14,15 @@ const meta: Meta<typeof StudyCard> = {
     layout: "centered",
   },
   args: {
-    generation: 1,
-    title: "스터디 이름",
-    content: "공부하는 스터디",
-    src: "https://ifh.cc/g/PrjcTD.png",
-    part: "Server/Cloud",
-    name: "김태욱",
-    status: "진행중",
+    study: {
+      generation: 1,
+      title: "스터디 이름",
+      content: "공부하는 스터디",
+      src: "https://ifh.cc/g/PrjcTD.png",
+      part: "Server/Cloud",
+      name: "김태욱",
+      status: "진행중",
+    } as Study,
   },
 };
 
@@ -27,8 +30,4 @@ export default meta;
 
 type Story = StoryObj<typeof StudyCard>;
 
-export const Default: Story = {
-  args: {
-    src: "https://ifh.cc/g/PrjcTD.png",
-  },
-};
+export const Default: Story = {};

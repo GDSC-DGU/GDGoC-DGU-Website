@@ -5,6 +5,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { MemberCard } from "../components/card/MemberCard.component";
+import { Member } from "../types";
 
 const meta: Meta<typeof MemberCard> = {
   title: "Components/Card/MemberCard",
@@ -13,14 +14,16 @@ const meta: Meta<typeof MemberCard> = {
     layout: "centered",
   },
   args: {
-    generation: 2,
-    name: "김태욱",
-    src: "https://ifh.cc/g/BacNDR.jpg",
-    part: "Web/App",
-    role: "General",
-    major: "컴퓨터공학과",
-    githubLink: "https://github.com/Taew00k",
-    linkedInLink: "https://www.instagram.com/taednr/",
+    member: {
+      generation: 2,
+      name: "김태욱",
+      src: "https://ifh.cc/g/BacNDR.jpg",
+      part: "Web/App",
+      role: "General",
+      major: "컴퓨터공학과",
+      githubLink: "https://github.com/Taew00k",
+      linkedInLink: "https://www.instagram.com/taednr/",
+    } as Member,
   },
 };
 
@@ -28,8 +31,4 @@ export default meta;
 
 type Story = StoryObj<typeof MemberCard>;
 
-export const Default: Story = {
-  args: {
-    src: "https://ifh.cc/g/BacNDR.jpg",
-  },
-};
+export const Default: Story = {};

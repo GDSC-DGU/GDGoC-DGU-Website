@@ -35,7 +35,7 @@ export const Filter = ({ category, value = "", onChange }: FilterProps) => {
       case "part":
         return {
           name: "파트",
-          options: ["전체", "AI/ML", "Server/Cloud", "Web/App", "Devral", "Lead"],
+          options: ["전체", "AI/ML", "Server/Cloud", "Web/App", "Devral", "Lead", "기타"],
         };
 
       case "type":
