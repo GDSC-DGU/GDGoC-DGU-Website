@@ -30,6 +30,9 @@ const config: Config = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-green": "linear-gradient(23deg, #FFF 65.9%, #C7E1CE 100%)",
+        "gradient-blue": "linear-gradient(23deg, #FFF 65.9%, #C3DAFF 100%)",
+        "gradient-red": "linear-gradient(23deg, #FFF 65.9%, #FFE3E3 100%)",
       },
       colors: {
         black: "#000000",
@@ -125,6 +128,9 @@ const config: Config = {
       boxShadow: {
         "gray-gradiate": "0 0 5px 0 rgba(0, 0, 0, 0.25)",
         "green-gradiate": "0px 0px 10px 0px rgba(15, 157, 88, 0.70)",
+        "red-gradiate": "0px 4px 4px 0px rgba(226, 65, 53, 0.50)",
+        "blue-gradiate": "0px 4px 4px 0px #4285F4",
+        "lightgreen-gradiate": "0px 4px 4px 0px #0F9D58",
       },
       fontFamily: {
         NotoSansKR: ["NotoSansKR"],
@@ -136,8 +142,12 @@ const config: Config = {
         Body3: ["0.875rem", { lineHeight: "20px", letterSpacing: "-0.35px" }], // 14px
         Body4: ["1.25rem", { lineHeight: "30px", letterSpacing: "-0.5px" }], // 20px
         Body5: ["0.625rem", { lineHeight: "15px", letterSpacing: "-0.25px" }], // 10px
+        Body6: ["1.25rem", { lineHeight: "24px" }], // 20px
+        Body7: ["1rem", { lineHeight: "16px" }], //16px
+        Body8: ["1.6rem", { lineHeight: "30px" }], //25px
         Head1: ["1.625rem", { lineHeight: "35px", letterSpacing: "-0.625px" }], //26px
         Head2: ["0.75rem", { lineHeight: "18px", letterSpacing: "-0.3px" }], // 12px
+        Head3: ["2.5rem", { lineHeight: "44px" }], // 40px
       },
     },
     screens: {
