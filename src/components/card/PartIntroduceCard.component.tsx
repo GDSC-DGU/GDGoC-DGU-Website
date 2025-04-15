@@ -28,7 +28,6 @@ export const PartIntroduceCard = ({ part, icon, content, preferContent, small_ic
       border: "border-green",
     },
   };
-
   const { shadow, bg, text: color, border } = partStyleMap[part];
 
   return (
