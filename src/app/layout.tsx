@@ -63,8 +63,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           />
         </noscript> */}
 
-        <div className='lg:pl-2 lg:pt-2 bg-gray-100 flex-1 overflow-y-auto'>
-          <div className='flex-1 bg-[#FCFCFC] min-h-screen lg:rounded-tl-xl border-transparent lg:border-neutral-200 overflow-y-auto'>
+        <div className='lg:pl-2 lg:pt-2 bg-gray-100 flex-1 overflow-y-auto py-24'>
+          <div className='flex-1 bg-[#FCFCFC] min-h-screen lg:rounded-tl-xl border-transparent lg:border-neutral-200'>
             {/*  GA 컴포넌트를 조건부로 배포 환경에서만 적용 */}
             {GA_ID && process.env.NODE_ENV === "production" && <GoogleAnalytics gaId={GA_ID} />}
             <TanstackQueryProvider>{children}</TanstackQueryProvider>
