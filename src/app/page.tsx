@@ -1,69 +1,43 @@
+"use client";
+
 import Image from "next/image";
 
-import Header from "./header/Header";
+import { IntroduceSection, WeeklyActivitesSection } from "@/src/components/home";
+import { TwoCircleComponent } from "@/src/components/page/TwoCircle.components";
 
 export default function Home() {
   return (
     <div className='min-h-screen flex flex-col bg-black text-white'>
-      {/* 헤더 */}
-      <header className='w-full py-4 px-8 flex justify-between items-center border-b border-gray-800'>
-        {/* 로고 */}
-
-        {/* 네비게이션 메뉴 */}
-        <nav className='hidden md:flex gap-6 text-sm'>
-          <a href='#' className='hover:text-gray-300 transition'>
-            세미나
-          </a>
-          <a href='#' className='hover:text-gray-300 transition'>
-            프로젝트
-          </a>
-          <a href='#' className='hover:text-gray-300 transition'>
-            스터디
-          </a>
-          <a href='#' className='hover:text-gray-300 transition'>
-            Techblog
-          </a>
-          <a href='#' className='hover:text-gray-300 transition'>
-            멤버
-          </a>
-        </nav>
-
-        {/* 지원하기 버튼 */}
-        <a
-          href='#'
-          className='hidden md:flex items-center px-4 py-2 border border-gray-600 rounded-full hover:bg-gray-800 transition'
-        >
-          지원하기 →
-        </a>
-
-        {/* 모바일 메뉴 (햄버거) */}
-        <button className='md:hidden text-white'>
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            fill='none'
-            viewBox='0 0 24 24'
-            stroke='currentColor'
-            width={28}
-            height={28}
-          >
-            <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M4 6h16M4 12h16m-7 6h7' />
-          </svg>
-        </button>
-      </header>
-
       {/* 메인 컨텐츠 */}
-      <main className='flex flex-col items-center justify-center flex-1 text-center px-8 py-20'>
-        <h1 className='text-4xl font-bold mb-4'>막간의 여행, GDGoC</h1>
-        <p className='text-gray-400 max-w-lg'>
-          개발자와 함께하는 다양한 프로젝트, 세미나, 그리고 네트워킹의 장. 지금 GDGoC와 함께하세요!
-        </p>
-        <a
-          href='#'
-          className='mt-6 px-6 py-3 bg-white text-black rounded-full font-semibold hover:bg-gray-300 transition'
-        >
-          지금 참여하기 →
-        </a>
+      <main className='flex flex-col items-center justify-center flex-1 text-center px-8'>
+        <Image src='/images/svg/home_img_2.svg' alt='GDGoC' width={1440} height={1000} />
+        <div className='mt-10 py-10'>
+          <h1 className='text-6xl font-bold mb-4'>Google Developer Group on Campus</h1>
+          <h2 className='text-4xl font-bold mb-4'>Dongguk University</h2>
+        </div>
       </main>
+      <div className='w-full h-64 bg-gradient-to-b from-black to-white' />
+      <div className='flex flex-col items-center flex-1 px-8 py-16 bg-white'>
+        {/* 첫 번째 섹션: GDGoC 소개 */}
+        <IntroduceSection />
+
+        {/* 두 번째 섹션: Main Events */}
+        <section className='flex flex-col items-center justify-center gap-8 mb-32 p-10'>
+          <TwoCircleComponent
+            TwoCircle={{
+              circleColor: "border-green",
+              text: "Main Events",
+              textColor: "text-green",
+              size: 230,
+              textSize: 20,
+            }}
+          />
+          <div>Timeline</div>
+        </section>
+
+        {/* 세 번째 섹션: Weekly Activity */}
+        <WeeklyActivitesSection />
+      </div>
     </div>
   );
 }
