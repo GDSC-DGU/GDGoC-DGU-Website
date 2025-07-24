@@ -148,6 +148,9 @@ const config: Config = {
         Head1: ["1.625rem", { lineHeight: "35px", letterSpacing: "-0.625px" }], //26px
         Head2: ["0.75rem", { lineHeight: "18px", letterSpacing: "-0.3px" }], // 12px
         Head3: ["2.5rem", { lineHeight: "44px" }], // 40px
+        Head4: ["3.375rem", { lineHeight: "66px" }], // 54px
+        Head5: ["2.2rem", { lineHeight: "28px", letterSpacing: "-0.875px" }], //35px
+        Head6: ["2.56rem", { lineHeight: "28px", letterSpacing: "-1.025px" }], //41px
       },
     },
     screens: {

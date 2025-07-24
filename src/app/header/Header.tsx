@@ -13,7 +13,7 @@ import HeaderComponents from "../../components/header/Header.components";
  * @author 동현
  */
 
-const BLACK_HEADER_PATHS = ["/"];
+const BLACK_HEADER_PATHS = ["/", "/recruit"];
 
 const Header = () => {
   const pathname = usePathname();
