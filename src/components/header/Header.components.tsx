@@ -20,7 +20,7 @@ interface HeaderProps {
 const HeaderComponents = ({ isBlack = false, children }: HeaderProps) => {
   return (
     <header className={cn("fixed top-0 left-0 right-0 z-50", isBlack ? "bg-black" : "bg-white")}>
-      <div className='w-full h-[93px] px-10 flex justify-between items-center'>{children}</div>
+      <div className='w-full h-[100px] px-10 flex justify-between items-center'>{children}</div>
     </header>
   );
 };
