@@ -33,6 +33,11 @@ const config: Config = {
         "gradient-green": "linear-gradient(23deg, #FFF 65.9%, #C7E1CE 100%)",
         "gradient-blue": "linear-gradient(23deg, #FFF 65.9%, #C3DAFF 100%)",
         "gradient-red": "linear-gradient(23deg, #FFF 65.9%, #FFE3E3 100%)",
+        "conic-custom":
+          "conic-gradient(from 0deg at 51.34% 63.22%, #FCFCFC 20.82deg, #E7EBFF 49.33deg, #EBFFF5 115.78deg, #FFF 185.33deg, #FFF 196.51deg, #FFEAEA 276.85deg, #FFF 360deg)",
+        "gradient-blue-bottom-fade": "linear-gradient(180deg, rgba(255,255,255,0) 48.45%, #B0CEFF 100%)",
+        "gradient-blue-top-fade": "linear-gradient(180deg, #B0CEFF 0%, rgba(255,255,255,0) 27.47%)",
+        "gradient-white-black": "linear-gradient(180deg, #FFF 0%, #000 100%)",
       },
       colors: {
         black: "#000000",
@@ -151,6 +156,8 @@ const config: Config = {
         Head4: ["3.375rem", { lineHeight: "66px" }], // 54px
         Head5: ["2.2rem", { lineHeight: "28px", letterSpacing: "-0.875px" }], //35px
         Head6: ["2.56rem", { lineHeight: "28px", letterSpacing: "-1.025px" }], //41px
+        Head7: ["2.625rem", { lineHeight: "103px", letterSpacing: "-1.025px" }], //42px
+        Head8: ["3.25rem", { lineHeight: "52px", letterSpacing: "-1.3px" }], //52px
       },
     },
     screens: {
