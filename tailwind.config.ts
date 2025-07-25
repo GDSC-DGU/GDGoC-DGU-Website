@@ -147,6 +147,10 @@ const config: Config = {
         Body2R: ["1rem", { lineHeight: "24px", letterSpacing: "-0.025em", fontWeight: "400" }],
         Body3: ["0.88rem", { lineHeight: "20px", letterSpacing: "-0.025em", fontWeight: "500" }],
         Body4: ["0.75rem", { lineHeight: "16px", letterSpacing: "-0.025em", fontWeight: "500" }],
+        Body5: ["0.625rem", { lineHeight: "15px", letterSpacing: "-0.25px" }], // 10px
+        Body6: ["1.25rem", { lineHeight: "24px" }], // 20px
+        Body7: ["1rem", { lineHeight: "16px" }], //16px
+        Body8: ["1.6rem", { lineHeight: "30px" }], //25px
         Button1: ["1.25rem", { lineHeight: "28px", letterSpacing: "-0.025em", fontWeight: "700" }],
         Button2: ["1rem", { lineHeight: "24px", letterSpacing: "-0.025em", fontWeight: "700" }],
         Head1: ["2rem", { lineHeight: "40px", letterSpacing: "-0.005em", fontWeight: "700" }],
