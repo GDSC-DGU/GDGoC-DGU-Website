@@ -96,10 +96,7 @@ const ProjectInfo = ({
   return (
     <div className='flex flex-col items-start gap-6'>
       <h2 className='whitespace-nowrap text-Button1 tablet:text-Head3 text-black'>프로젝트 설명</h2>
-      <div className='flex w-full flex-row gap-6 items-center'>
-        <h3 className='whitespace-nowrap w-[110px] text-Body3 tablet:text-Body2 text-black'>프로젝트 리드</h3>
-        <p className='text-black text-Body3 tablet:text-Body2 flex-1'>{leader}</p>
-      </div>
+      <InfoRow label='프로젝트 리드' value={leader} />
       <div className='flex flex-row w-full gap-6 items-start'>
         <h3 className='whitespace-nowrap w-[110px] text-Body3 tablet:text-Body2 text-black'>프로젝트 멤버</h3>
         <div className='flex flex-col gap-4 items-start flex-1'>
@@ -151,22 +148,10 @@ const SeminarInfo = ({
   return (
     <div className='flex flex-col items-start gap-6'>
       <h2 className=' whitespace-nowrap text-Button1 tablet:text-Head3 text-black'>세미나 설명</h2>
-      <div className='flex flex-row w-full gap-6 items-center'>
-        <h3 className='whitespace-nowrap w-[110px] text-Body3 tablet:text-Body2 text-black'>세미나 주제</h3>
-        <p className='text-black text-Body3 tablet:text-Body2 flex-1'>{title}</p>
-      </div>
-      <div className='flex flex-row w-full gap-6 items-center'>
-        <h3 className='whitespace-nowrap w-[110px] text-Body3 tablet:text-Body2 text-black'>세미나 진행자</h3>
-        <p className='text-black text-Body3 tablet:text-Body2 flex-1'>{name}</p>
-      </div>
-      <div className='flex flex-row w-full gap-6 items-center'>
-        <h3 className='whitespace-nowrap w-[110px] text-Body3 tablet:text-Body2 text-black'>세미나 카테고리</h3>
-        <p className='text-black text-Body3 tablet:text-Body2 flex-1'>{category}</p>
-      </div>
-      <div className='flex flex-row w-full gap-6 items-center'>
-        <h3 className='whitespace-nowrap w-[110px] text-Body3 tablet:text-Body2 text-black'>세미나 일시</h3>
-        <p className='text-black text-Body3 tablet:text-Body2 flex-1'>{formatDateWithDay(date)}</p>
-      </div>
+      <InfoRow label='세미나 주제' value={title} />
+      <InfoRow label='세미나 진행자' value={name} />
+      <InfoRow label='세미나 카테고리' value={category} />
+      <InfoRow label='세미나 일시' value={formatDateWithDay(date)} />
     </div>
   );
 };
@@ -175,10 +160,9 @@ const StudyInfo = ({ name, status, members }: { name: string; status: string; me
   return (
     <div className='flex flex-col items-start gap-6'>
       <h2 className='whitespace-nowrap text-Button1 tablet:text-Head3 text-black'>스터디 설명</h2>
-      <div className='flex w-full flex-row gap-6 items-center'>
-        <h3 className='whitespace-nowrap w-[110px] text-Body3 tablet:text-Body2 text-black'>스터디 리드</h3>
-        <p className='text-black text-Body3 tablet:text-Body2 flex-1'>{name}</p>
-      </div>
+
+      <InfoRow label='스터디 리드' value={name} />
+
       <div className='flex flex-row gap-6 items-start'>
         <h3 className='whitespace-nowrap w-[110px] text-Body3 tablet:text-Body2 text-black'>스터디 멤버</h3>
         <div className='flex flex-col gap-4 items-start'>
@@ -193,10 +177,16 @@ const StudyInfo = ({ name, status, members }: { name: string; status: string; me
           )}
         </div>
       </div>
-      <div className='flex w-full flex-row gap-6 items-center'>
-        <h3 className='whitespace-nowrap w-[110px] text-Body3 tablet:text-Body2 text-black'>스터디 상태</h3>
-        <p className='text-black text-Body3 tablet:text-Body2 flex-1'>{status}</p>
-      </div>
+      <InfoRow label='스터디 상태' value={status} />
+    </div>
+  );
+};
+
+const InfoRow = ({ label, value, isColumn = false }: { label: string; value: React.ReactNode; isColumn?: boolean }) => {
+  return (
+    <div className={`flex ${isColumn ? "items-start" : "items-center"} flex-row w-full gap-6`}>
+      <h3 className='whitespace-nowrap w-[110px] text-Body3 tablet:text-Body2 text-black'>{label}</h3>
+      <div className='text-black text-Body3 tablet:text-Body2 flex-1'>{value}</div>
     </div>
   );
 };
