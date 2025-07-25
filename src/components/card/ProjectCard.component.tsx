@@ -3,6 +3,8 @@
  * ProjectCardProps는 Project type을 기반으로 정의하였습니다.
  * @author 태욱, 정선
  */
+import { useRouter } from "next/navigation";
+
 import { Project } from "@/src/types";
 
 import { Card } from "./Card.components";
@@ -12,9 +14,15 @@ export type ProjectCardProps = {
 };
 
 export const ProjectCard = ({ project }: ProjectCardProps) => {
-  const { title, content, generation, src } = project;
+  const { title, content, generation, src, id } = project;
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push(`/project/${id}`);
+  };
+
   return (
-    <Card>
+    <Card onClick={handleClick}>
       <Card.CardContainer>
         <Card.CardImage src={src} alt='projectImage' size='small' />
         <Card.CardBody>

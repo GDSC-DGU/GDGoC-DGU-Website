@@ -3,6 +3,8 @@
  * StudyCardProps는 Study 타입을 기반으로 정의하였습니다.
  * @author 태욱
  */
+import { useRouter } from "next/navigation";
+
 import { Study } from "@/src/types";
 
 import { Card } from "./Card.components";
@@ -12,9 +14,16 @@ export type StudyCardProps = {
 };
 
 export const StudyCard = ({ study }: StudyCardProps) => {
-  const { title, name, part, generation, src, content, status } = study;
+  const { title, name, part, generation, src, content, status, id } = study;
+
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push(`/study/${id}`);
+  };
+
   return (
-    <Card>
+    <Card onClick={handleClick}>
       <Card.CardContainer>
         <Card.CardImage src={src} alt='StudyImage' size='small' />
         <Card.CardBody>
