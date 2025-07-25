@@ -11,4 +11,11 @@ export type Seminar = {
   part: MemberPart;
   name: string;
   category: SeminarCategory;
+  date: string;
+};
+
+export const seminarTypeMap: Record<string, string> = {
+  전체: "전체",
+  "캠핑 세미나": "Camping Seminar",
+  "오픈 세미나": "Open Seminar",
 };

@@ -1,14 +1,12 @@
-import { prefix } from "@/src/constants/prefix";
-
 /**
  * 기본 메타데이터 설정입니다.
- * 
+ *
  * @author 도형
  */
 
 export const defaultImages = [
   {
-    url: `${prefix}/images/profile.jpg`,
+    url: `/images/defaultImage.png`,
     width: 1200,
     height: 630,
     alt: "GDGoC DGU",

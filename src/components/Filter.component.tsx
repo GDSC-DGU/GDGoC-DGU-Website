@@ -10,7 +10,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 interface FilterProps {
   // 필터 카테고리를 기수, 파트, 타입으로 한정합니다.
-  category: "generation" | "part" | "type";
+  category: "generation" | "part" | "type" | "simplePart";
   value?: string;
   onChange: (value: string) => void;
 }
@@ -35,16 +35,21 @@ export const Filter = ({ category, value = "", onChange }: FilterProps) => {
       case "part":
         return {
           name: "파트",
-          options: ["전체", "AI/ML", "Server/Cloud", "Web/App", "Devral", "Lead", "기타"],
+          options: ["전체", "AI/ML", "Server/Cloud", "Web/App", "Devrel"],
+        };
+      case "simplePart":
+        return {
+          name: "파트",
+          options: ["전체", "AI/ML", "Server/Cloud", "Web/App"],
         };
 
       case "type":
         return {
           name: "타입",
-          options: ["전체", "오픈 세미나", "연합 세미나", "캠핑 세미나"],
+          options: ["전체", "오픈 세미나", "캠핑 세미나"],
         };
       default:
-        return { name: "필터", options: ["전체"] }; // 예외 처리
+        return { name: "필터", options: ["전체"] };
     }
   };
   const { name, options } = getFilterConfig(category);
@@ -65,7 +70,12 @@ export const Filter = ({ category, value = "", onChange }: FilterProps) => {
 
   const handleSelect = (option: string) => {
     setSelectedValue(option);
-    onChange(option);
+    if (category === "generation" && option !== "전체") {
+      const numeric = parseInt(option.replace("기", ""));
+      onChange(String(numeric));
+    } else {
+      onChange(option);
+    }
     setIsOpen(false);
   };
 
@@ -80,7 +90,7 @@ export const Filter = ({ category, value = "", onChange }: FilterProps) => {
         return "text-blue border-blue";
       case "Web/App":
         return "text-green border-green";
-      case "Devral":
+      case "Devrel":
         return "text-yellow border-yellow";
       case "Lead":
         return "text-black border-black";
@@ -90,24 +100,24 @@ export const Filter = ({ category, value = "", onChange }: FilterProps) => {
   };
 
   const isAll = selectedValue === "전체" || selectedValue === "";
-  const displayValue = isAll ? name : selectedValue; // "전체"일 땐 기본 표시
+  const displayValue = isAll ? name : category === "generation" ? `${selectedValue}기` : selectedValue;
 
   return (
-    <div className={`relative inline-block w-32 tablet:w-40`} ref={dropdownRef}>
+    <div className={`relative inline-block `} ref={dropdownRef}>
       <div
-        className={`w-full border-2 rounded-lg cursor-pointer flex justify-between items-center ${getColorClass(selectedValue)} bg-white px-3 py-1 text-base tablet:px-4 tablet:py-2 tablet:text-xl`}
+        className={`inline-flex border-2 rounded-lg cursor-pointer justify-between items-center ${getColorClass(selectedValue)} bg-white px-3 py-1 text-Body2 tablet:px-4 tablet:py-2 tablet:text-Body1 whitespace-nowrap`}
         onClick={() => setIsOpen((prev) => !prev)}
       >
         <span>{displayValue}</span>
-        <span className='text-sm'>▾</span>
+        <span className='ml-1 text-sm'>▾</span>
       </div>
 
       {isOpen && (
-        <ul className='absolute z-10 mt-1 w-full bg-white border border-gray-200 rounded-lg shadow-md max-h-60 overflow-auto'>
+        <ul className='absolute z-10 mt-1 bg-white border border-gray-200 rounded-lg shadow-md max-h-60 overflow-auto whitespace-nowrap min-w-max'>
           {[...options].map((opt) => (
             <li
               key={opt}
-              className={`px-3 py-1 text-base tablet:px-4 tablet:py-2 tablet:text-xl m-1 rounded-md hover:bg-gray-100 cursor-pointer text-gray-400  ${
+              className={`px-3 py-1 text-Body2 m-1 tablet:px-4 tablet:py-2 tablet:text-Body1 rounded-md hover:bg-gray-100 cursor-pointer text-gray-400  ${
                 selectedValue === opt ? "bg-gray-100" : ""
               }`}
               onClick={() => handleSelect(opt)}

@@ -104,7 +104,7 @@ const DesktopNav = ({ isBlack }: { isBlack: boolean }) => {
           Techblog
         </NavLink>
         <NavLink href='/member' isBlack={isBlack} pathname={pathname}>
-          맴버
+          멤버
         </NavLink>
         <div className='relative inline-flex rounded-full p-[3px] overflow-hidden'>
           <div
@@ -175,7 +175,7 @@ const MobileNav = ({ menuOpen }: { menuOpen: boolean }) => {
           Techblog
         </MobileNavLink>
         <MobileNavLink href='/member' pathname={pathname}>
-          맴버
+          멤버
         </MobileNavLink>
         <MobileNavLink href='/recruit' pathname={pathname}>
           지원하기

@@ -11,4 +11,4 @@ export type Member = {
 };
 
 export type MemberRole = "Core" | "General" | "Lead";
-export type MemberPart = "AI/ML" | "Server/Cloud" | "Web/App" | "Devral" | "Lead";
+export type MemberPart = "AI/ML" | "Server/Cloud" | "Web/App" | "Devrel" | "Lead";

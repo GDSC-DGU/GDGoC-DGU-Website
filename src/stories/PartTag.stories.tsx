@@ -41,10 +41,10 @@ export const WebApp: Story = {
   },
 };
 
-// Devral 파트 스토리 생성
-export const Devral: Story = {
+// Devrel 파트 스토리 생성
+export const Devrel: Story = {
   args: {
-    part: "Devral",
+    part: "Devrel",
   },
 };
 
