@@ -32,13 +32,13 @@ export const ActivityCard = ({ src, title, content }: ActivityCardProps) => {
           className='
             text-gray-800
             group-hover:text-green
-            font-NotoSansKR font-medium text-Head2 tablet:text-Head1
+            font-NotoSansKR font-medium text-Body4 tablet:text-Head2
             transition-colors duration-300
           '
         >
           {title}
         </h2>
-        <p className='text-gray-600 font-NotoSansKR font-normal text-Body5 tablet:text-Body4 h-[120px] line-clamp-4'>
+        <p className='text-gray-600 font-NotoSansKR font-normal text-Body5 tablet:text-Body1 h-[120px] line-clamp-4'>
           {content}
         </p>
       </div>
