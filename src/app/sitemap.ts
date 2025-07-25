@@ -1,7 +1,5 @@
 import type { MetadataRoute } from "next";
 
-import { products } from "@/src/constants/products";
-
 /**
  * 검색 엔진 최적화(SEO)를 위한 sitemap.xml 파일을 동적으로 생성하는 API 라우트입니다.
  * 메인 페이지, 정보 페이지, 각종 페이지, 블로그 등 사이트의 모든 중요 URL을 포함하며,
@@ -11,13 +9,6 @@ import { products } from "@/src/constants/products";
  */
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const projects = products.map((project) => ({
-    url: `https://gdgoc-dgu.com/portfolio/${project.slug}`,
-    lastModified: new Date(project.modified_at),
-    changeFrequency: "weekly",
-    priority: 0.8,
-  })) as MetadataRoute.Sitemap;
-
   return [
     {
       url: "https://gdgoc-dgu.com/",
@@ -37,7 +28,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
-    ...projects,
     {
       url: "https://gdgoc-dgu.com/blog",
       lastModified: new Date(),

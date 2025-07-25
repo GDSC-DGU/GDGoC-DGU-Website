@@ -25,7 +25,7 @@ export const StudyInfo = ({ part, content }: StudyInfoProps) => {
 
   return (
     <div
-      className={clsx("flex items-center gap-3 px-6 py-4 rounded-xl", {
+      className={clsx("flex items-center gap-3 px-6 py-4 rounded-xl max-w-full break-words", {
         "bg-red-50": part === "AI/ML",
         "bg-blue-50": part === "Server/Cloud",
         "bg-green-50": part === "Web/App",

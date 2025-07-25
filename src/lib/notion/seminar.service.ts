@@ -29,6 +29,7 @@ export const getSeminarList = async (): Promise<Seminar[]> => {
           part: props.Topic?.select?.name ?? "",
           name: speakerName,
           category: props.Tags?.select?.name ?? "",
+          date: props.Date?.date?.start ?? "",
         };
       }),
     ),

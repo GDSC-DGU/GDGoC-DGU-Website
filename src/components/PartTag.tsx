@@ -13,20 +13,28 @@ import { HighlightText } from "./Highlight.component";
  */
 
 interface PartTagProps {
-  part: "AI/ML" | "Server/Cloud" | "Web/App" | "Devral" | "Lead" | string;
+  part: "AI/ML" | "Server/Cloud" | "Web/App" | "Devrel" | "Lead" | string;
 }
 
 export const PartTag = ({ part }: PartTagProps) => {
   return (
     <div className='flex flex-wrap'>
       <HighlightText
-        className={clsx("!text-caption font-semibold rounded-md px-3 py-1 bg-white border-2", {
+        className={clsx("!text-Caption font-semibold rounded-md px-3 py-1 bg-white border-2", {
           "text-red border-red": part === "AI/ML",
           "text-blue border-blue": part === "Server/Cloud",
           "text-green border-green": part === "Web/App",
-          "text-yellow border-yellow": part === "Devral",
+          "text-yellow border-yellow": ["Devrel", "Marketing", "Community"].includes(part),
           "text-black border-black": part === "Lead",
-          "text-gray-400 border-gray-400": !["AI/ML", "Server/Cloud", "Web/App", "Devral", "Lead"].includes(part),
+          "text-gray-400 border-gray-400": ![
+            "AI/ML",
+            "Server/Cloud",
+            "Web/App",
+            "Devrel",
+            "Marketing",
+            "Community",
+            "Lead",
+          ].includes(part),
         })}
       >
         {part}

@@ -9,8 +9,12 @@ import clsx from "clsx";
 
 import { PartTag } from "../PartTag";
 
-const Card = ({ children }: { children: React.ReactNode }) => {
-  return <div className='rounded-[16px] bg-white border w-fit border-gray-300 p-4'>{children}</div>;
+const Card = ({ children, onClick }: { children: React.ReactNode; onClick?: () => void }) => {
+  return (
+    <div onClick={onClick} className='rounded-[16px] bg-white border w-fit border-gray-300 p-4'>
+      {children}
+    </div>
+  );
 };
 
 const CardContainer = ({ children, type }: { children: React.ReactNode; type?: "member" }) => {
@@ -37,10 +41,10 @@ const CardImage = ({ src, alt, size }: { src?: string; alt: string; size: "small
 };
 
 const Generation = ({ generation }: { generation: number }) => {
-  return <div className='text-gray-600 font-NotoSansKR font-bold text-caption'>{generation}기</div>;
+  return <div className='text-gray-600 font-NotoSansKR font-bold text-Caption'>{generation}기</div>;
 };
 
-const Title = ({ title, part }: { title: string; part?: "AI/ML" | "Server/Cloud" | "Web/App" | "Devral" | "Lead" }) => {
+const Title = ({ title, part }: { title: string; part?: "AI/ML" | "Server/Cloud" | "Web/App" | "Devrel" | "Lead" }) => {
   return (
     <div className='flex text-gray-800 font-NotoSansKR font-medium text-Body1 gap-[10px] justify-between'>
       <div className='w-[213px] line-clamp-1'>{title}</div>
@@ -60,7 +64,7 @@ const Content = ({ content, type }: { content: string; type: string }) => {
 
 const SeminarInfo = ({ name, category }: { name: string; category: string }) => {
   return (
-    <div className='flex text-gray-600 font-NotoSansKR font-medium text-caption gap-2'>
+    <div className='flex text-gray-600 font-NotoSansKR font-medium text-Caption gap-2'>
       <p>{name}</p>
       <p>{category}</p>
     </div>
@@ -70,10 +74,10 @@ const SeminarInfo = ({ name, category }: { name: string; category: string }) => 
 const StudyInfo = ({ name, status }: { name: string; status: string }) => {
   return (
     <div className='flex justify-between'>
-      <div className='flex text-gray-600 font-NotoSansKR font-medium text-caption gap-2'>
+      <div className='flex text-gray-600 font-NotoSansKR font-medium text-Caption gap-2'>
         <p>팀장</p> <p>{name}</p>
       </div>
-      <div className='text-blue font-NotoSansKR font-medium text-caption'>{status}</div>
+      <div className='text-blue font-NotoSansKR font-medium text-Caption'>{status}</div>
     </div>
   );
 };

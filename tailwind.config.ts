@@ -141,18 +141,21 @@ const config: Config = {
         NotoSansKR: ["NotoSansKR"],
       },
       fontSize: {
-        caption: ["0.75rem", { lineHeight: "16px", letterSpacing: "-0.3px" }], // 12px
-        Body1: ["1.25rem", { lineHeight: "28px", letterSpacing: "-0.5px" }], // 20px
-        Body2: ["1rem", { lineHeight: "24px", letterSpacing: "-0.4px" }], // 16px
-        Body3: ["0.875rem", { lineHeight: "20px", letterSpacing: "-0.35px" }], // 14px
-        Body4: ["1.25rem", { lineHeight: "30px", letterSpacing: "-0.5px" }], // 20px
+        Caption: ["0.75rem", { lineHeight: "16px", letterSpacing: "-0.025em", fontWeight: "700" }],
+        Body1: ["1.25rem", { lineHeight: "28px", letterSpacing: "-0.025em", fontWeight: "500" }],
+        Body2: ["1rem", { lineHeight: "24px", letterSpacing: "-0.025em", fontWeight: "500" }],
+        Body2R: ["1rem", { lineHeight: "24px", letterSpacing: "-0.025em", fontWeight: "400" }],
+        Body3: ["0.88rem", { lineHeight: "20px", letterSpacing: "-0.025em", fontWeight: "500" }],
+        Body4: ["0.75rem", { lineHeight: "16px", letterSpacing: "-0.025em", fontWeight: "500" }],
         Body5: ["0.625rem", { lineHeight: "15px", letterSpacing: "-0.25px" }], // 10px
         Body6: ["1.25rem", { lineHeight: "24px" }], // 20px
         Body7: ["1rem", { lineHeight: "16px" }], //16px
         Body8: ["1.6rem", { lineHeight: "30px" }], //25px
-        Head1: ["1.625rem", { lineHeight: "35px", letterSpacing: "-0.625px" }], //26px
-        Head2: ["0.75rem", { lineHeight: "18px", letterSpacing: "-0.3px" }], // 12px
-        Head3: ["2.5rem", { lineHeight: "44px" }], // 40px
+        Button1: ["1.25rem", { lineHeight: "28px", letterSpacing: "-0.025em", fontWeight: "700" }],
+        Button2: ["1rem", { lineHeight: "24px", letterSpacing: "-0.025em", fontWeight: "700" }],
+        Head1: ["2rem", { lineHeight: "40px", letterSpacing: "-0.005em", fontWeight: "700" }],
+        Head2: ["1.75rem", { lineHeight: "36px", fontWeight: "700" }],
+        Head3: ["1.5rem", { lineHeight: "32px", fontWeight: "700" }],
         Head4: ["3.375rem", { lineHeight: "66px" }], // 54px
         Head5: ["2.2rem", { lineHeight: "28px", letterSpacing: "-0.875px" }], //35px
         Head6: ["2.56rem", { lineHeight: "28px", letterSpacing: "-1.025px" }], //41px
@@ -160,6 +163,7 @@ const config: Config = {
         Head8: ["3.25rem", { lineHeight: "52px", letterSpacing: "-1.3px" }], //52px
       },
     },
+
     screens: {
       tablet: "768px",
       // => @media (min-width: 768px) { ... }

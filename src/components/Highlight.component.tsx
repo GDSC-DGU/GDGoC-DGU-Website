@@ -12,5 +12,5 @@ import { twMerge } from "tailwind-merge";
  */
 
 export const HighlightText = ({ className, children }: { className?: string; children: React.ReactNode }) => {
-  return <span className={twMerge("bg-gray-200 rounded px-2 py-1 text-secondary", className)}>{children}</span>;
+  return <p className={twMerge("bg-gray-200 text-Body4 rounded px-2 py-1 whitespace-nowrap", className)}>{children}</p>;
 };

@@ -1,12 +1,8 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import { Footer } from "../components/Footer.component";
-import { prefix } from "../constants/prefix";
 import { TanstackQueryProvider } from "../lib/query/TanstackQueryProvider";
 import "./globals.css";
 import Header from "./header/Header";
@@ -41,13 +37,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name='author' content='GDGoC DGU' />
         <meta name='robots' content='index,follow' />
         <meta property='og:type' content='website' />
-        <link rel='manifest' href={`${prefix}/site.webmanifest`} crossOrigin='use-credentials' />
+        <link rel='manifest' href={`/site.webmanifest`} crossOrigin='use-credentials' />
         <meta name='msapplication-TileColor' content='#ffffff' />
-        <meta name='msapplication-TileImage' content={`${prefix}/ms-icon-144x144.png`} />
+        <meta name='msapplication-TileImage' content={`/ms-icon-144x144.png`} />
         <meta name='theme-color' content='#ffffff' />
       </head>
 
-      <body className='flex antialiased h-screen overflow-hidden font-NotoSansKR bg-gray-100'>
+      <body className='flex flex-col antialiased h-screen overflow-hidden font-NotoSansKR bg-gray-100'>
         <Header />
 
         {/* GTM 컴포넌트를 조건부로 배포 환경에서만 적용 */}
@@ -63,7 +59,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           />
         </noscript> */}
 
-        <div className='lg:pl-2 lg:pt-2 bg-gray-100 flex-1 overflow-y-auto py-24'>
+        <div className='lg:pl-2 lg:pt-2 bg-gray-100 flex-1 overflow-y-auto pt-24'>
           <div className='flex-1 bg-[#FCFCFC] min-h-screen lg:rounded-tl-xl border-transparent lg:border-neutral-200'>
             {/*  GA 컴포넌트를 조건부로 배포 환경에서만 적용 */}
             {GA_ID && process.env.NODE_ENV === "production" && <GoogleAnalytics gaId={GA_ID} />}

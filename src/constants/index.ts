@@ -1,1 +1,4 @@
-export * from "./prefix";
+export * from "./pageIntroduce";
+export * from "./partIntroduce";
+export * from "./target";
+export * from "./studyIntroduce";
