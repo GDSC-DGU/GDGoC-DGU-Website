@@ -120,7 +120,7 @@ const DesktopNav = ({ isBlack }: { isBlack: boolean }) => {
               isBlack ? "bg-black text-gray-300 hover:bg-gray-800" : "bg-white text-gray-600 hover:bg-gray-300",
             )}
           >
-            <Link href='/#'>지원하기 →</Link>
+            <Link href='/recruit'>지원하기 →</Link>
           </button>
         </div>
       </nav>
@@ -177,7 +177,7 @@ const MobileNav = ({ menuOpen }: { menuOpen: boolean }) => {
         <MobileNavLink href='/member' pathname={pathname}>
           맴버
         </MobileNavLink>
-        <MobileNavLink href='/#' pathname={pathname}>
+        <MobileNavLink href='/recruit' pathname={pathname}>
           지원하기
         </MobileNavLink>
       </nav>
