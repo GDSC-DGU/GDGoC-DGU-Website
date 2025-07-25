@@ -38,9 +38,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name='robots' content='index,follow' />
         <meta property='og:type' content='website' />
         <link rel='manifest' href={`/site.webmanifest`} crossOrigin='use-credentials' />
-        <meta name='msapplication-TileColor' content='#ffffff' />
-        <meta name='msapplication-TileImage' content={`/ms-icon-144x144.png`} />
-        <meta name='theme-color' content='#ffffff' />
+        <link rel='icon' type='image/png' href='/icon.png' />
+        <meta name='msapplication-TileColor' content='#4285f4' />
+        <meta name='msapplication-TileImage' content={`/icon.png`} />
+        <meta name='theme-color' content='#4285f4' />
       </head>
 
       <body className='flex flex-col antialiased h-screen overflow-hidden font-NotoSansKR bg-gray-100'>
