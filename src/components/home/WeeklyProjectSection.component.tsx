@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 import { ProjectCard } from "@/src/components/card/ProjectCard.component";
+import { isMobile } from "@/src/function/utils";
 import { useProjectQuery } from "@/src/lib/query/useProjectQuery";
 import { Project } from "@/src/types";
 
@@ -18,13 +20,31 @@ const getRandomItems = <T,>(array: T[], n: number): T[] => {
 
 export const WeeklyProjectSection = () => {
   const { data: projects, isLoading, isError } = useProjectQuery();
+  const [displayProjects, setDisplayProjects] = useState<Project[]>([]);
+
+  useEffect(() => {
+    const updateDisplayProjects = () => {
+      if (projects) {
+        const count = isMobile() ? 1 : 3;
+        setDisplayProjects(getRandomItems(projects, count));
+      }
+    };
+
+    updateDisplayProjects();
+
+    window.addEventListener("resize", updateDisplayProjects);
+
+    return () => {
+      window.removeEventListener("resize", updateDisplayProjects);
+    };
+  }, [projects]);
 
   if (isLoading) return <p>로딩 중...</p>;
   if (isError) return <p>에러 발생!</p>;
 
   return (
     <div className='w-full'>
-      <div className='flex justify-between items-center mb-8 px-4'>
+      <div className='flex justify-between items-center mb-8 px-10 tablet:px-4'>
         <div className='text-gray-600 font-bold text-[24px] font-notosanskr'>Project</div>
         <button className='bg-blue-100 text-blue px-4 py-2 rounded-lg font-medium hover:bg-blue-200 transition-colors'>
           <Link href='/project'>For More</Link>
@@ -32,7 +52,9 @@ export const WeeklyProjectSection = () => {
       </div>
       <section className='w-full flex justify-center'>
         <div className='w-fit max-w-screen-xl place-items-center px-4 grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 gap-6 justify-start'>
-          {projects && getRandomItems(projects, 3).map((s: Project) => <ProjectCard key={s.id} project={s} />)}
+          {displayProjects.map((s: Project) => (
+            <ProjectCard key={s.id} project={s} />
+          ))}
         </div>
       </section>
     </div>

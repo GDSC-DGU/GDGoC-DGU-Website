@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 import { SeminarCard } from "@/src/components/card/SeminarCard.component";
+import { isMobile } from "@/src/function/utils";
 import { useSeminarQuery } from "@/src/lib/query/useSeminarQuery";
 import { Seminar } from "@/src/types";
 
@@ -18,13 +20,33 @@ const getRandomItems = <T,>(array: T[], n: number): T[] => {
 
 export const WeeklySeminarSection = () => {
   const { data: seminars, isLoading, isError } = useSeminarQuery();
+  const [displaySeminars, setDisplaySeminars] = useState<Seminar[]>([]);
+
+  useEffect(() => {
+    const updateDisplaySeminars = () => {
+      if (seminars) {
+        const count = isMobile() ? 1 : 3;
+        setDisplaySeminars(getRandomItems(seminars, count));
+      }
+    };
+
+    // 초기 설정
+    updateDisplaySeminars();
+
+    // 윈도우 리사이즈 이벤트 리스너
+    window.addEventListener("resize", updateDisplaySeminars);
+
+    return () => {
+      window.removeEventListener("resize", updateDisplaySeminars);
+    };
+  }, [seminars]);
 
   if (isLoading) return <p>로딩 중...</p>;
   if (isError) return <p>에러 발생!</p>;
 
   return (
     <div className='w-full'>
-      <div className='flex justify-between items-center mb-8 px-4'>
+      <div className='flex justify-between items-center mb-8 px-10 tablet:px-4'>
         <div className='text-gray-600 font-bold text-[24px] font-notosanskr'>Seminar</div>
         <button className='bg-blue-100 text-blue px-4 py-2 rounded-lg font-medium hover:bg-blue-200 transition-colors'>
           <Link href='/seminar'>For More</Link>
@@ -32,7 +54,9 @@ export const WeeklySeminarSection = () => {
       </div>
       <section className='w-full flex justify-center'>
         <div className='w-fit max-w-screen-xl place-items-center px-4 grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 gap-6 justify-start'>
-          {seminars && getRandomItems(seminars, 3).map((s: Seminar) => <SeminarCard key={s.id} seminar={s} />)}
+          {displaySeminars.map((s: Seminar) => (
+            <SeminarCard key={s.id} seminar={s} />
+          ))}
         </div>
       </section>
     </div>

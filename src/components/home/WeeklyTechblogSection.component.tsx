@@ -1,8 +1,7 @@
 import Link from "next/link";
 
-import { SeminarCard } from "@/src/components/card/SeminarCard.component";
-import { useSeminarQuery } from "@/src/lib/query/useSeminarQuery";
-import { Seminar } from "@/src/types";
+import { blogCardData } from "@/src/app/techblog/blogData";
+import { BlogCard } from "@/src/components/card/BlogCard.component";
 
 /**
  * 배열에서 랜덤으로 n개의 요소를 선택하는 함수
@@ -17,22 +16,28 @@ const getRandomItems = <T,>(array: T[], n: number): T[] => {
 };
 
 export const WeeklyTechblogSection = () => {
-  const { data: seminars, isLoading, isError } = useSeminarQuery();
-
-  if (isLoading) return <p>로딩 중...</p>;
-  if (isError) return <p>에러 발생!</p>;
+  // 랜덤한 1개의 블로그 카드 선택
+  const randomBlog = getRandomItems(blogCardData, 1)[0];
 
   return (
     <div className='w-full'>
-      <div className='flex justify-between items-center mb-8 px-4'>
-        <div className='text-gray-600 font-bold text-[24px] font-notosanskr'>Techblog 만들어지면 수정예정</div>
+      <div className='flex justify-between items-center mb-8 px-10 tablet:px-4'>
+        <div className='text-gray-600 font-bold text-[24px] font-notosanskr'>Weekly Techblog</div>
         <button className='bg-blue-100 text-blue px-4 py-2 rounded-lg font-medium hover:bg-blue-200 transition-colors'>
           <Link href='/techblog'>For More</Link>
         </button>
       </div>
       <section className='w-full flex justify-center'>
-        <div className='w-fit max-w-screen-xl place-items-center px-4 grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 gap-6 justify-start'>
-          {seminars && getRandomItems(seminars, 3).map((s: Seminar) => <SeminarCard key={s.id} seminar={s} />)}
+        <div className='w-fit max-w-screen-xl place-items-center px-4 flex justify-center'>
+          <BlogCard
+            key={randomBlog.blogUrl}
+            blogUrl={randomBlog.blogUrl}
+            src={randomBlog.src}
+            generation={randomBlog.generation}
+            title={randomBlog.title}
+            content={randomBlog.content}
+            tags={randomBlog.tags}
+          />
         </div>
       </section>
     </div>

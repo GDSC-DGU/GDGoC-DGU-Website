@@ -8,7 +8,7 @@ import { TwoCircleComponent } from "@/src/components/page/TwoCircle.components";
 
 export const WeeklyActivitesSection = () => {
   return (
-    <section className='flex flex-col items-center gap-8 p-10'>
+    <section className='flex flex-col items-center gap-8 tablet:p-10 mobile:w-full'>
       <TwoCircleComponent
         TwoCircle={{
           circleColor: "border-blue",

@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 import { StudyCard } from "@/src/components/card/StudyCard.component";
+import { isMobile } from "@/src/function/utils";
 import { useStudyQuery } from "@/src/lib/query/useStudyQuery";
 import { Study } from "@/src/types";
 
@@ -20,13 +22,33 @@ const getRandomItems = <T,>(array: T[], n: number): T[] => {
 
 export const WeeklyStudySection = () => {
   const { data: studies, isLoading, isError } = useStudyQuery();
+  const [displayStudies, setDisplayStudies] = useState<Study[]>([]);
+
+  useEffect(() => {
+    const updateDisplayStudies = () => {
+      if (studies) {
+        const count = isMobile() ? 1 : 3;
+        setDisplayStudies(getRandomItems(studies, count));
+      }
+    };
+
+    // 초기 설정
+    updateDisplayStudies();
+
+    // 윈도우 리사이즈 이벤트 리스너
+    window.addEventListener("resize", updateDisplayStudies);
+
+    return () => {
+      window.removeEventListener("resize", updateDisplayStudies);
+    };
+  }, [studies]);
 
   if (isLoading) return <p>로딩 중...</p>;
   if (isError) return <p>에러 발생!</p>;
 
   return (
     <div className='w-full'>
-      <div className='flex justify-between items-center mb-8 px-4'>
+      <div className='flex justify-between items-center mb-8 px-10 tablet:px-4'>
         <div className='text-gray-600 font-bold text-[24px] font-notosanskr'>Study</div>
         <button className='bg-blue-100 text-blue px-4 py-2 rounded-lg font-medium hover:bg-blue-200 transition-colors'>
           <Link href='/study'>For More</Link>
@@ -34,7 +56,9 @@ export const WeeklyStudySection = () => {
       </div>
       <section className='w-full flex justify-center'>
         <div className='w-fit max-w-screen-xl place-items-center px-4 grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 gap-6 justify-start'>
-          {studies && getRandomItems(studies, 3).map((s: Study) => <StudyCard key={s.id} study={s} />)}
+          {displayStudies.map((s: Study) => (
+            <StudyCard key={s.id} study={s} />
+          ))}
         </div>
       </section>
     </div>
