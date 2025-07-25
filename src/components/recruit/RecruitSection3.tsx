@@ -49,7 +49,7 @@ export default function RecruitSection3() {
           ))}
         </div>
       </div>
-      <div className='flex flex-col items-center justify-center w-full h-[902px] p-[100px] gap-[72px] box-border'>
+      <div className='flex flex-col items-center justify-center w-full h-[902px] p-[100px] gap-[52px] box-border'>
         <TwoCircleComponent TwoCircle={TargetCircleData} />
         <div>
           <span className='font-NotoSansKR font-medium text-Head7 text-black'>
@@ -70,20 +70,20 @@ export default function RecruitSection3() {
       <div className='flex flex-col items-center justify-center w-full h-[1505px] p-[100px] gap-[72px] bg-gradient-blue-bottom-fade'>
         <TwoCircleComponent TwoCircle={PlanCircleData} />
         <div className='relative w-[1094px] h-[1272px]'>
-          <Image src='/images/png/RecruitDate.png' alt='Gdgoc 모집일정' fill className='object-cover' priority />
+          <Image src='/images/png/RecruitDate.png' alt='Gdgoc 모집일정' fill className='object-cover' />
         </div>
       </div>
       <div className='flex flex-col items-center justify-center w-full h-[2144px] gap-[146px] box-border bg-gradient-blue-top-fade'>
         <span className='font-NotoSansKR font-bold text-Head8 text-black'>자주 묻는 질문</span>
         <div>
           <div style={{ position: "relative", width: "1200px", height: "508px" }}>
-            <Image src='/images/png/Question1.png' alt='자주 묻는 질문1' fill className='object-cover' priority />
+            <Image src='/images/png/Question1.png' alt='자주 묻는 질문1' fill className='object-cover' />
           </div>
           <div style={{ position: "relative", width: "1200px", height: "508px" }}>
-            <Image src='/images/png/Question2.png' alt='자주 묻는 질문2' fill className='object-cover' priority />
+            <Image src='/images/png/Question2.png' alt='자주 묻는 질문2' fill className='object-cover' />
           </div>
           <div style={{ position: "relative", width: "1200px", height: "508px" }}>
-            <Image src='/images/png/Question3.png' alt='자주 묻는 질문3' fill className='object-cover' priority />
+            <Image src='/images/png/Question3.png' alt='자주 묻는 질문3' fill className='object-cover' />
           </div>
         </div>
       </div>
