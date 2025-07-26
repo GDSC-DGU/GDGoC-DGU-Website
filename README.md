@@ -1,7 +1,5 @@
 # GDGoC-DGU-Website
 
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FGDSC-DGU%2Fgdsc-dgu&count_bg=%23FFA300&title_bg=%23FFCA32&icon=&icon_color=%23E7E7E7&title=GDGoC+DGU&edge_flat=true)](https://hits.seeyoufarm.com)
-
 ## 📌 Branch Strategy
 
 ### 1️⃣ Starting Development
