@@ -157,8 +157,14 @@ const config: Config = {
         Head2: ["1.75rem", { lineHeight: "36px", fontWeight: "700" }],
         Head3: ["1.5rem", { lineHeight: "32px", fontWeight: "700" }],
         Head4: ["3.375rem", { lineHeight: "66px" }], // 54px
+        Head4Mobile: ["1.25rem", { lineHeight: "1.2" }],
+        Head4Tablet: ["2.625rem", { lineHeight: "1.2" }],
         Head5: ["2.2rem", { lineHeight: "28px", letterSpacing: "-0.875px" }], //35px
+        Head5Mobile: ["0.937rem", { lineHeight: "28px" }],
+        Head5Tablet: ["1.687rem", { lineHeight: "28px" }],
         Head6: ["2.56rem", { lineHeight: "28px", letterSpacing: "-1.025px" }], //41px
+        Head6Tablet: ["2.0625rem", { lineHeight: "28px", letterSpacing: "-0.825px" }],
+        Head6Moblie: ["1.25rem", { lineHeight: "28px", letterSpacing: "-0.5px" }],
         Head7: ["2.625rem", { lineHeight: "103px", letterSpacing: "-1.025px" }], //42px
         Head8: ["3.25rem", { lineHeight: "52px", letterSpacing: "-1.3px" }], //52px
       },
