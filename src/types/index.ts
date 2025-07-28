@@ -5,3 +5,4 @@ export * from "./seminar";
 export * from "./study";
 export * from "./project";
 export * from "./twoCircle";
+export * from "./mainEvent";

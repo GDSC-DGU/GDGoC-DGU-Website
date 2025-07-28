@@ -2,15 +2,22 @@
 
 import { ActivityCard } from "@/src/components/card/ActivityCard.component";
 import { TwoCircleComponent } from "@/src/components/page/TwoCircle.components";
-import { MAIN_EVENTS } from "@/src/constants";
+import { useMainEventQuery } from "@/src/lib/query/useMainEventQuery";
 
 /**
  * 메인 이벤트 섹션 컴포넌트
  * 타임라인 형태로 메인 이벤트들을 표시합니다.
+ * 노션 데이터베이스에서 이벤트 정보를 가져와 표시합니다.
  * @author 동현
  */
 
 export const MainEventsSection = () => {
+  const { data: mainEvents, isLoading, isError } = useMainEventQuery();
+
+  if (isLoading) return <p>로딩 중...</p>;
+  if (isError) return <p>에러 발생!</p>;
+  if (!mainEvents || mainEvents.length === 0) return null;
+
   return (
     <section className='flex flex-col items-center justify-center gap-8 mb-32 p-10 w-full'>
       <TwoCircleComponent
@@ -29,8 +36,8 @@ export const MainEventsSection = () => {
         <div className='absolute left-1/2 top-0 bottom-0 w-1 transform -translate-x-1/2 hidden tablet:block bg-gradient-to-b from-white via-green to-white' />
 
         {/* 이벤트 카드들 */}
-        <div className='flex flex-col gap-8 tablet:gap-16'>
-          {MAIN_EVENTS.map((event, index) => (
+        <div>
+          {mainEvents.map((event, index) => (
             <div key={event.id} className='relative'>
               {/* 타임라인 연결점 (데스크탑용) */}
               <div className='absolute left-1/2 top-1/2 w-4 h-4 bg-green rounded-full transform -translate-x-1/2 -translate-y-1/2 hidden tablet:block z-20' />
