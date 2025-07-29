@@ -33,6 +33,8 @@ const config: Config = {
         "gradient-green": "linear-gradient(23deg, #FFF 65.9%, #C7E1CE 100%)",
         "gradient-blue": "linear-gradient(23deg, #FFF 65.9%, #C3DAFF 100%)",
         "gradient-red": "linear-gradient(23deg, #FFF 65.9%, #FFE3E3 100%)",
+        "linear-custom":
+          "linear-gradient(180deg, rgba(255,255,255,0.20) 0%, rgba(255,174,174,0.20) 17.39%, rgba(155,159,255,0.20) 45.93%, rgba(199,255,213,0.20) 75.07%, rgba(255,255,255,0.20) 96.36%)",
         "conic-custom":
           "conic-gradient(from 0deg at 51.34% 63.22%, #FCFCFC 20.82deg, #E7EBFF 49.33deg, #EBFFF5 115.78deg, #FFF 185.33deg, #FFF 196.51deg, #FFEAEA 276.85deg, #FFF 360deg)",
         "gradient-blue-bottom-fade": "linear-gradient(180deg, rgba(255,255,255,0) 48.45%, #B0CEFF 100%)",
@@ -136,6 +138,7 @@ const config: Config = {
         "red-gradiate": "0px 4px 4px 0px rgba(226, 65, 53, 0.50)",
         "blue-gradiate": "0px 4px 4px 0px #4285F4",
         "lightgreen-gradiate": "0px 4px 4px 0px #0F9D58",
+        "littlegreen-gradiate": "0 2px 4px 0 #0F9D58",
       },
       fontFamily: {
         NotoSansKR: ["NotoSansKR"],
@@ -150,7 +153,9 @@ const config: Config = {
         Body5: ["0.625rem", { lineHeight: "15px", letterSpacing: "-0.25px" }], // 10px
         Body6: ["1.25rem", { lineHeight: "24px" }], // 20px
         Body7: ["1rem", { lineHeight: "16px" }], //16px
-        Body8: ["1.6rem", { lineHeight: "30px" }], //25px
+        Body8: ["1.6rem", { lineHeight: "28px" }], //25px
+        Body8Tablet: ["1.25rem", { lineHeight: "28px" }], // 20px
+        Body8Mobile: ["0.75rem", { lineHeight: "28px" }],
         Button1: ["1.25rem", { lineHeight: "28px", letterSpacing: "-0.025em", fontWeight: "700" }],
         Button2: ["1rem", { lineHeight: "24px", letterSpacing: "-0.025em", fontWeight: "700" }],
         Head1: ["2rem", { lineHeight: "40px", letterSpacing: "-0.005em", fontWeight: "700" }],
@@ -166,7 +171,10 @@ const config: Config = {
         Head6Tablet: ["2.0625rem", { lineHeight: "28px", letterSpacing: "-0.825px" }],
         Head6Moblie: ["1.25rem", { lineHeight: "28px", letterSpacing: "-0.5px" }],
         Head7: ["2.625rem", { lineHeight: "103px", letterSpacing: "-1.025px" }], //42px
+        Head7Tablet: ["1.75rem", { lineHeight: "35px" }],
+        Head7Moblie: ["1rem", { lineHeight: "24px", letterSpacing: "-0.4px" }],
         Head8: ["3.25rem", { lineHeight: "52px", letterSpacing: "-1.3px" }], //52px
+        Head8Tablet: ["2.5rem", { lineHeight: "28px", letterSpacing: "-1px"  }],
       },
     },
 
