@@ -31,7 +31,7 @@ export const PartIntroduceCard = ({ part, icon, content, preferContent, small_ic
   const { shadow, bg, text: color, border } = partStyleMap[part];
 
   return (
-    <div className={`rounded-[16px] w-[375px] h-[436px] py-[10px] px-[26px] ${shadow} ${bg}`}>
+    <div className={`rounded-[16px] w-[375px] h-[436px] py-[10px] px-[20px] ${shadow} ${bg}`}>
       <div className='flex flex-col gap-4 py-2'>
         <div>{icon}</div>
         <h2 className='font-NotoSansKR font-bold text-Head3 text-black '>{part}</h2>

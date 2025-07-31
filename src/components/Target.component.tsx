@@ -38,7 +38,7 @@ export const TargetComponent = ({ text, boldList }: TargetComponentProps) => {
   }
 
   return (
-    <div className='border border-green rounded-[20px] w-[860px] h-[80px] flex items-center justify-center font-NotoSansKR font-normal text-Body8 text-black whitespace-pre-wrap'>
+    <div className='border border-green shadow-littlegreen-gradiate rounded-[20px] w-[320px] h-[50px] tablet:w-[537px] tablet:h-[65px] desktop:w-[860px] desktop:h-[80px] flex items-center justify-center font-NotoSansKR font-normal text-Body8Mobile tablet:text-Body8Tablet desktop:text-Body8 text-black whitespace-pre-wrap'>
       {elements.map((el, idx) => (
         <React.Fragment key={idx}>
           {el}
