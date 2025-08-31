@@ -19,6 +19,7 @@ export function TanstackQueryProvider({ children }: { children: ReactNode }) {
             refetchOnWindowFocus: false,
             refetchOnReconnect: false,
             refetchInterval: false,
+            refetchOnMount: false,
           },
         },
       }),
