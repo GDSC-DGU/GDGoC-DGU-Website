@@ -11,7 +11,10 @@ import { PartTag } from "../PartTag";
 
 const Card = ({ children, onClick }: { children: React.ReactNode; onClick?: () => void }) => {
   return (
-    <div onClick={onClick} className='rounded-[16px] bg-white border w-fit border-gray-300 p-4'>
+    <div
+      onClick={onClick}
+      className='rounded-[16px] bg-white border w-fit border-gray-300 p-4 cursor-pointer transform transition-transform duration-500 hover:scale-105'
+    >
       {children}
     </div>
   );
@@ -31,11 +34,21 @@ const CardImage = ({ src, alt, size }: { src?: string; alt: string; size: "small
     "relative overflow-hidden rounded-[8px] w-[280px]",
     size === "large" ? "h-[194px]" : "h-[155px]",
   );
-  const defaultImage = "/images/png/defaultImage.png";
+  const defaultImage = "/images/svg/defaultImage.svg";
+
+  const imageSizes = size === "large" ? "280px" : "280px";
 
   return (
     <div className={containerClass}>
-      <Image src={src ? src : defaultImage} alt={alt} fill className='object-cover' />
+      <Image
+        src={src ? src : defaultImage}
+        alt={alt}
+        fill
+        className='object-contain'
+        sizes={imageSizes}
+        quality={70}
+        priority
+      />
     </div>
   );
 };

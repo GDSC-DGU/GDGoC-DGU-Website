@@ -6,7 +6,7 @@
 
 export const defaultImages = [
   {
-    url: `/images/png/defaultImage.png`,
+    url: `/images/svg/defaultImage.svg`,
     width: 1200,
     height: 630,
     alt: "GDGoC DGU - Google Developer Group on Campus Dongguk University",
