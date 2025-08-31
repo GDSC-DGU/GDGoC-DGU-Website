@@ -44,7 +44,7 @@ const TitleContainer = ({
 };
 
 const ImageBox = ({ src, alt }: { src?: string; alt: string }) => {
-  const defaultImage = "/images/png/defaultImage.png";
+  const defaultImage = "/images/svg/defaultImage.svg";
 
   return (
     <div className='relative overflow-hidden rounded-[8px] w-full tablet:w-[672px] desktop:w-[984px]'>

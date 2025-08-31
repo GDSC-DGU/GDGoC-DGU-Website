@@ -25,7 +25,7 @@ export const getSeminarList = async (): Promise<Seminar[]> => {
           generation: props.Generation?.number ?? index + 1,
           title: props.Name?.title?.[0]?.plain_text ?? "",
           content: props.Description?.rich_text?.[0]?.text?.content ?? "",
-          src: props.Files?.files?.[1]?.file?.url ?? "",
+          src: props.Files?.files?.[1]?.file?.url ?? page.cover?.file?.url ?? "",
           part: props.Topic?.select?.name ?? "",
           name: speakerName,
           category: props.Tags?.select?.name ?? "",

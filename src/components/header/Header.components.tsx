@@ -100,9 +100,9 @@ const DesktopNav = ({ isBlack }: { isBlack: boolean }) => {
         <NavLink href='/study' isBlack={isBlack} pathname={pathname}>
           스터디
         </NavLink>
-        <NavLink href='/techblog' isBlack={isBlack} pathname={pathname}>
+        {/* <NavLink href='/techblog' isBlack={isBlack} pathname={pathname}>
           Techblog
-        </NavLink>
+        </NavLink> */}
         <NavLink href='/member' isBlack={isBlack} pathname={pathname}>
           멤버
         </NavLink>
@@ -120,7 +120,9 @@ const DesktopNav = ({ isBlack }: { isBlack: boolean }) => {
               isBlack ? "bg-black text-gray-300 hover:bg-gray-800" : "bg-white text-gray-600 hover:bg-gray-300",
             )}
           >
-            <Link href='/recruit'>지원하기 →</Link>
+            <Link href='https://docs.google.com/forms/d/e/1FAIpQLSePr9hj38doS2wXWvOr8BP1xEGu-9vkbZ15em8PaIumqZxREQ/viewform'>
+              지원하기 →
+            </Link>
           </button>
         </div>
       </nav>

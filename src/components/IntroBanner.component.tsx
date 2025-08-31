@@ -17,10 +17,16 @@ interface IntroBannerProps {
 
 export const IntroBanner = ({ type }: IntroBannerProps) => {
   return (
-    <div className='w-full flex py-12 px-8 tablet:px-16 desktop:px-24 items-start gap-4 bg-blue-50 flex-col'>
-      <h1 className='text-Head3 tablet:text-Head1 text-black'>{PAGE_INTRODUCE[type].title}</h1>
-      <p className='text-Body4 tablet:text-Body1 text-black'>. . . .</p>
-      <p className='text-Body4 tablet:text-Body1 text-black'>{PAGE_INTRODUCE[type].content}</p>
+    <div className='w-full flex py-12 px-8 tablet:px-16 desktop:px-24 items-center gap-4 bg-blue-50 flex-col'>
+      <h1 className='w-[320px] tablet:w-[650px] desktop:w-[1000px] text-Head3 tablet:text-Head1 text-black whitespace-normal'>
+        {PAGE_INTRODUCE[type].title}
+      </h1>
+      <p className='w-[320px] tablet:w-[650px] desktop:w-[1000px] text-Body4 tablet:text-Body1 text-black whitespace-normal'>
+        . . . .
+      </p>
+      <p className='w-[320px] tablet:w-[650px] desktop:w-[1000px] text-Body4 tablet:text-Body1 text-black whitespace-normal'>
+        {PAGE_INTRODUCE[type].content}
+      </p>
     </div>
   );
 };

@@ -4,6 +4,8 @@ import { ActivityCard } from "@/src/components/card/ActivityCard.component";
 import { TwoCircleComponent } from "@/src/components/page/TwoCircle.components";
 import { useMainEventQuery } from "@/src/lib/query/useMainEventQuery";
 
+import { RevealOnScroll } from "../RevealOnScroll.component";
+
 /**
  * 메인 이벤트 섹션 컴포넌트
  * 타임라인 형태로 메인 이벤트들을 표시합니다.
@@ -20,16 +22,17 @@ export const MainEventsSection = () => {
 
   return (
     <section className='flex flex-col items-center justify-center gap-8 mb-32 p-10 w-full'>
-      <TwoCircleComponent
-        TwoCircle={{
-          circleColor: "border-green",
-          text: "Main Events",
-          textColor: "text-green",
-          size: 230,
-          textSize: 20,
-        }}
-      />
-
+      <RevealOnScroll>
+        <TwoCircleComponent
+          TwoCircle={{
+            circleColor: "border-green",
+            text: "Main Events",
+            textColor: "text-green",
+            size: 230,
+            textSize: 20,
+          }}
+        />
+      </RevealOnScroll>
       {/* 타임라인 컨테이너 */}
       <div className='relative w-full max-w-5xl'>
         {/* 타임라인 연결선 (데스크탑용) */}
@@ -48,9 +51,11 @@ export const MainEventsSection = () => {
                 {index % 2 === 0 && (
                   <>
                     <div className='flex-1 flex justify-start -ml-[7.1rem] hidden tablet:flex'>
-                      <div className='max-w-sm w-full'>
-                        <ActivityCard src={event.imageSrc} title={event.title} content={event.content} />
-                      </div>
+                      <RevealOnScroll>
+                        <div className='max-w-sm w-full'>
+                          <ActivityCard src={event.imageSrc} title={event.title} content={event.content} />
+                        </div>
+                      </RevealOnScroll>
                     </div>
 
                     {/* 왼쪽으로 향하는 가로 연결선 */}
@@ -69,23 +74,28 @@ export const MainEventsSection = () => {
 
                     <div className='flex-1 flex justify-start pl-[40rem] hidden tablet:flex'>
                       <div className='max-w-sm w-full'>
-                        <ActivityCard src={event.imageSrc} title={event.title} content={event.content} />
+                        <RevealOnScroll>
+                          <ActivityCard src={event.imageSrc} title={event.title} content={event.content} />
+                        </RevealOnScroll>
                       </div>
                     </div>
                   </>
                 )}
-
-                {/* 모바일용 카드 (항상 표시) */}
-                <div className='w-full flex flex-col justify-center items-center tablet:hidden'>
-                  <div className='max-w-sm w-full flex justify-center items-center'>
-                    <ActivityCard src={event.imageSrc} title={event.title} content={event.content} />
-                  </div>
-                </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+      {/* 모바일용 카드 (항상 표시) */}
+      {mainEvents.map((event, index) => (
+        <div key={event.id} className='w-full gap-8 flex flex-col justify-center items-center tablet:hidden'>
+          <div className='max-w-sm w-full flex justify-center items-center'>
+            <RevealOnScroll>
+              <ActivityCard src={event.imageSrc} title={event.title} content={event.content} />
+            </RevealOnScroll>
+          </div>
+        </div>
+      ))}
     </section>
   );
 };

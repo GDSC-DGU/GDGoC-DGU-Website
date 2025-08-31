@@ -19,7 +19,7 @@ interface BlogCardProps {
 
 export const BlogCard = ({ src, generation, title, content, blogUrl, tags }: BlogCardProps) => {
   const colors = ["red", "blue", "green", "yellow"] as const;
-  const renderImageSrc = src ? src : "/images/png/defaultImage.png";
+  const renderImageSrc = src ? src : "/images/svg/defaultImage.svg";
 
   return (
     <Link href={blogUrl} target='_blank' rel='noopener noreferrer'>
