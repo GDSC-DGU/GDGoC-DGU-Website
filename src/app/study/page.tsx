@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { Filter, IntroBanner, StudyInfo } from "@/src/components";
 import { StudyCard } from "@/src/components/card/StudyCard.component";
@@ -17,17 +17,23 @@ export default function StudyPage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
-  const filteredStudies = study?.filter((s) => {
-    const matchesGeneration = generation === "전체" || String(s.generation) === generation;
-    const matchesPart = part === "전체" || s.part === part;
-    return matchesGeneration && matchesPart;
-  });
+  const filteredStudies = useMemo(() => {
+    if (!study) return [];
+
+    const filtered = study.filter((s) => {
+      const matchesGeneration = generation === "전체" || String(s.generation) === generation;
+      const matchesPart = part === "전체" || s.part === part;
+      return matchesGeneration && matchesPart;
+    });
+
+    return filtered.sort((a, b) => b.generation - a.generation);
+  }, [study, generation, part]);
 
   return (
     <div className='w-full pb-24 flex flex-col items-center'>
       <IntroBanner type='study' />
       <section className='w-fit max-w-screen-xl justify-center'>
-        <div className='flex flex-col gap-2 tablet:flex-row justify-between tablet:items-center py-6 tablet:py-12'>
+        <div className='flex flex-col gap-2 tablet:flex-row justify-between tablet:items-center py-6 tablet:py-12 w-[320px] tablet:w-[650px] desktop:w-[1000px]'>
           <div className='justify-start max-w-screen-xl gap-4 flex'>
             <Filter category='generation' value={generation} onChange={setGeneration} />
             <Filter category='simplePart' value={part} onChange={setPart} />

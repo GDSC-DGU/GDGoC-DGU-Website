@@ -20,11 +20,13 @@ export default function MemberPage() {
     scrollTo();
   }, []);
 
-  const filteredMembers = members?.filter((m: Member) => {
-    const matchGeneration = generation === "전체" || m.generation === Number(generation);
-    const matchPart = part === "전체" || normalizePart(m.part) === part;
-    return matchGeneration && matchPart;
-  });
+  const filteredMembers = members
+    ?.filter((m: Member) => {
+      const matchGeneration = generation === "전체" || m.generation === Number(generation);
+      const matchPart = part === "전체" || normalizePart(m.part) === part;
+      return matchGeneration && matchPart;
+    })
+    .sort((a, b) => b.generation - a.generation);
 
   return (
     <div className='w-full py-6 tablet:py-12 desktop:py-24 flex flex-col items-center bg-white'>

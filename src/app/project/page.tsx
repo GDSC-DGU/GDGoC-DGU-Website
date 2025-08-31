@@ -19,18 +19,18 @@ export default function ProjectPage() {
   const filteredProjects = useMemo(() => {
     if (!projects) return [];
 
-    if (generation === "전체") return projects;
-
-    return projects.filter((project: Project) => {
-      return String(project.generation) === generation;
+    const filtered = projects.filter((project: Project) => {
+      return generation === "전체" || String(project.generation) === generation;
     });
+
+    return filtered.sort((a, b) => b.generation - a.generation);
   }, [projects, generation]);
 
   return (
     <div className='w-full pb-24 flex flex-col items-center'>
       <IntroBanner type='project' />
       <section className='w-fit max-w-screen-xl justify-center'>
-        <div className='flex flex-col tablet:flex-row justify-between tablet:items-center py-6 tablet:py-12'>
+        <div className='flex flex-col tablet:flex-row justify-between tablet:items-center py-6 tablet:py-12 w-[320px] tablet:w-[650px] desktop:w-[1000px]'>
           <Filter category='generation' value={generation} onChange={setGeneration} />
           <label className='text-Body2 tablet:text-Body1 text-gray-600 text-end'>
             {filteredProjects.length}개의 프로젝트
