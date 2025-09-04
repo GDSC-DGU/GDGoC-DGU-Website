@@ -25,7 +25,7 @@ export const ActivityCard = ({ src, title, content }: ActivityCardProps) => {
       '
     >
       <div className='relative w-[234px] h-[128px] tablet:w-[457px] tablet:h-[250px]'>
-        <Image src={src} alt='활동 이미지' fill className='object-cover rounded-[8px]' />
+        <Image src={src} alt='활동 이미지' fill className='object-cover rounded-[8px]' unoptimized={true} />
       </div>
       <div className='flex flex-col w-[234px] h-[84px] tablet:w-[457px] tablet:h-[165px] gap-1 tablet:gap-2.5'>
         <h2
